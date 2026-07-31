@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TOTRE | Torneadora Trevisan</title>
+    <title>TOTRE | Gestão Empresarial</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome Icons -->
@@ -36,18 +36,89 @@
         ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
     </style>
     <!-- Ligação para o PWA (Manifesto e Cor do Tema) -->
-    <link rel="icon" type="image/svg+xml" href="assets/icone-totre.svg">
-    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="icon" type="image/png" href="icone-totre.png">
     <meta name="theme-color" content="#0284c7">
+
+    <style id="totre-modern-theme">
+      :root{--totre:#2463eb;--totre2:#6f5cf3;--ink:#172033;--muted:#6b7280;--line:#e7eaf0;--surface:#ffffff;--bg:#f5f7fb}
+      body.totre-modern{background:var(--bg)!important;color:var(--ink)!important;font-family:Inter,"Segoe UI",Arial,sans-serif}
+      body.totre-modern .bg-slate-950{background:var(--bg)!important}
+      body.totre-modern .bg-slate-900{background:#fff!important}
+      body.totre-modern .bg-slate-800,body.totre-modern .bg-slate-800\/90,body.totre-modern .bg-slate-800\/80,body.totre-modern .bg-slate-800\/60,body.totre-modern .bg-slate-800\/40{background:#f8fafc!important}
+      body.totre-modern .border-slate-800,body.totre-modern .border-slate-700,body.totre-modern .border-slate-700\/50,body.totre-modern .border-slate-700\/60,body.totre-modern .border-slate-700\/80{border-color:var(--line)!important}
+      body.totre-modern .text-white,body.totre-modern .text-slate-200,body.totre-modern .text-slate-300{color:var(--ink)!important}
+      body.totre-modern .text-slate-400,body.totre-modern .text-slate-500{color:var(--muted)!important}
+      body.totre-modern aside{box-shadow:8px 0 32px rgba(15,23,42,.05);z-index:20}
+      body.totre-modern .nav-link{color:#5b6475!important;border-right:0!important}
+      body.totre-modern .nav-link:hover{background:#eff4ff!important;color:var(--totre)!important}
+      body.totre-modern .nav-link.active{background:linear-gradient(135deg,#eaf1ff,#f1eeff)!important;color:var(--totre)!important;border-right:0!important;box-shadow:inset 0 0 0 1px #dce6ff}
+      body.totre-modern input,body.totre-modern select,body.totre-modern textarea{background:#fff!important;color:var(--ink)!important;border-color:#dfe3eb!important}
+      body.totre-modern input:focus,body.totre-modern select:focus,body.totre-modern textarea:focus{border-color:var(--totre)!important;box-shadow:0 0 0 3px rgba(36,99,235,.12)!important}
+      body.totre-modern table{background:#fff}
+      body.totre-modern thead{background:#f8fafc!important;color:#6b7280!important}
+      body.totre-modern tbody tr:hover{background:#f8fbff}
+      body.totre-modern .shadow,body.totre-modern .shadow-md,body.totre-modern .shadow-2xl{box-shadow:0 10px 30px rgba(15,23,42,.07)!important}
+      body.totre-modern button.bg-sky-600,body.totre-modern button.bg-emerald-600{background:linear-gradient(135deg,var(--totre),var(--totre2))!important;color:#fff!important}
+      body.totre-modern .fixed.bg-black\/80,body.totre-modern .fixed.bg-black\/70,body.totre-modern .fixed.bg-black\/85{background:rgba(15,23,42,.45)!important;backdrop-filter:blur(5px)}
+      .totre-brand-chip{background:linear-gradient(135deg,var(--totre),var(--totre2));color:#fff;border-radius:12px;padding:9px 12px;font-weight:900;letter-spacing:.14em;text-align:center;box-shadow:0 8px 20px rgba(36,99,235,.22)}
+      .totre-logout{width:100%;display:flex;align-items:center;justify-content:center;gap:8px;border:1px solid #e4e8ef;background:#fff;color:#64748b;border-radius:10px;padding:9px;font-weight:700;font-size:11px;margin-top:8px}
+      .totre-logout:hover{background:#fff1f2;color:#e11d48;border-color:#fecdd3}
+      #totreLogin{position:fixed;inset:0;z-index:9999;display:grid;grid-template-columns:minmax(360px,1fr) minmax(420px,560px);background:#f8f9fc;overflow:hidden}
+      #totreLogin.hidden{display:none}
+      .login-art{position:relative;padding:72px 8vw;display:flex;flex-direction:column;justify-content:center;overflow:hidden;background:linear-gradient(135deg,#fbfcff 0%,#f2f5ff 100%)}
+      .login-art:before,.login-art:after{content:"";position:absolute;border-radius:28px;transform:rotate(45deg);background:linear-gradient(135deg,rgba(58,116,255,.12),rgba(130,98,255,.05));box-shadow:0 30px 80px rgba(56,92,200,.12)}
+      .login-art:before{width:330px;height:330px;left:14%;top:15%}.login-art:after{width:430px;height:430px;left:34%;bottom:-22%}
+      .login-brand{position:relative;z-index:2;max-width:470px}
+      .login-logo{display:flex;align-items:center;gap:18px;margin-bottom:30px}
+      .login-mark{width:82px;height:82px;border-radius:24px;background:linear-gradient(145deg,#2873ff,#764cf2);display:grid;place-items:center;box-shadow:0 22px 45px rgba(58,87,216,.28)}
+      .login-mark svg{width:52px;height:52px}.login-word{font-size:60px;line-height:1;font-weight:900;letter-spacing:.04em;color:#263147}
+      .login-tagline{font-size:25px;line-height:1.35;color:#667085;font-weight:600;max-width:440px}
+      .login-panel{display:flex;align-items:center;justify-content:center;padding:42px;background:rgba(255,255,255,.82);backdrop-filter:blur(15px);box-shadow:-24px 0 70px rgba(28,44,85,.07)}
+      .login-card{width:100%;max-width:420px;background:#fff;border:1px solid #edf0f5;border-radius:28px;padding:42px;box-shadow:0 28px 70px rgba(25,39,78,.12)}
+      .login-card h1{font-size:27px;color:#20283a;font-weight:850;text-align:center;margin:0 0 7px}.login-card .sub{text-align:center;color:#8a93a3;margin-bottom:28px;font-size:14px}
+      .field{margin-bottom:17px}.field label{display:block;font-weight:750;color:#414a5c;margin-bottom:8px;font-size:13px}.field-wrap{position:relative}.field-wrap i{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:#9aa3b3}.field-wrap input{width:100%;height:50px;padding:0 44px 0 42px;border:1px solid #dfe3ea;border-radius:12px;font-size:14px;outline:none}.field-wrap button{position:absolute;right:9px;top:50%;transform:translateY(-50%);background:transparent;border:0;color:#9aa3b3;padding:8px}
+      .login-row{display:flex;justify-content:space-between;align-items:center;gap:15px;margin:4px 0 22px;font-size:12px;color:#697386}.login-row label{display:flex;align-items:center;gap:8px}.login-row a{color:#4169e1;font-weight:700;text-decoration:none}
+      .login-submit{width:100%;height:50px;border:0;border-radius:12px;color:#fff;font-weight:800;font-size:14px;background:linear-gradient(90deg,#2f73e8,#6c5de9);box-shadow:0 13px 24px rgba(62,94,220,.26)}
+      .login-submit:hover{filter:brightness(1.05)}.login-note{text-align:center;color:#9aa3b2;font-size:11px;margin-top:24px;line-height:1.5}.login-error{display:none;margin:-6px 0 14px;padding:10px 12px;background:#fff1f2;border:1px solid #fecdd3;color:#be123c;border-radius:10px;font-size:12px}.login-error.show{display:block}
+      @media(max-width:900px){#totreLogin{grid-template-columns:1fr}.login-art{display:none}.login-panel{padding:24px;background:linear-gradient(145deg,#f4f7ff,#fff)}.login-card{padding:30px 24px;border-radius:22px}.login-card:before{content:"TOTRE";display:block;text-align:center;font-size:34px;font-weight:900;color:#2a4a99;margin-bottom:18px}}
+    </style>
+
 </head>
-<body class="flex h-screen overflow-hidden text-[11px] leading-tight">
+<body class="totre-modern flex h-screen overflow-hidden text-[11px] leading-tight">
+
+    <section id="totreLogin" aria-label="Acesso ao TOTRE">
+      <div class="login-art">
+        <div class="login-brand">
+          <div class="login-logo">
+            <div class="login-mark" aria-hidden="true">
+              <svg viewBox="0 0 64 64" fill="none"><path d="M13 16h38M21 16v32M43 16v32M21 31h22" stroke="white" stroke-width="7" stroke-linecap="round"/></svg>
+            </div>
+            <div class="login-word">TOTRE</div>
+          </div>
+          <div class="login-tagline">Controle simples para sua empresa crescer.</div>
+        </div>
+      </div>
+      <div class="login-panel">
+        <form class="login-card" id="totreLoginForm">
+          <h1>Bem-vindo ao TOTRE</h1>
+          <div class="sub">Gestão empresarial</div>
+          <div id="totreLoginError" class="login-error">E-mail ou senha inválidos.</div>
+          <div class="field"><label for="totreEmail">E-mail</label><div class="field-wrap"><i class="fa-regular fa-envelope"></i><input id="totreEmail" type="email" autocomplete="username" placeholder="seu@email.com" required></div></div>
+          <div class="field"><label for="totrePassword">Senha</label><div class="field-wrap"><i class="fa-solid fa-lock"></i><input id="totrePassword" type="password" autocomplete="current-password" placeholder="Digite sua senha" required><button type="button" id="toggleTotrePassword" aria-label="Mostrar senha"><i class="fa-regular fa-eye"></i></button></div></div>
+          <div class="login-row"><label><input id="totreRemember" type="checkbox"> Manter conectado</label><a href="#" id="totreForgot">Esqueci minha senha</a></div>
+          <button class="login-submit" type="submit">Entrar</button>
+          <div class="login-note">Acesso inicial: <strong>admin@totre.com.br</strong><br>Senha: <strong>Totre@123</strong><br><br>TOTRE Gestão Empresarial</div>
+        </form>
+      </div>
+    </section>
+
 
     <!-- SIDEBAR LATERAL COMPACTA -->
     <aside class="w-52 bg-slate-900 border-r border-slate-800 flex flex-col justify-between shrink-0 hidden md:flex">
         <div>
             <div class="p-3 border-b border-slate-800 flex items-center justify-between">
                 <div class="flex flex-col gap-0.5 w-full">
-                    <div class="bg-gradient-to-tr from-sky-600 to-cyan-500 text-white font-black px-2 py-1 rounded-lg text-sm tracking-wider shadow-md text-center w-full">
+                    <div class="totre-brand-chip w-full">
                         TOTRE
                     </div>
                     <span id="sideEmpresaNome" class="text-[9px] font-bold text-slate-400 uppercase tracking-tight truncate text-center block w-full px-1">
@@ -89,6 +160,7 @@
             <button onclick="toggleConfigModal()" class="w-full flex items-center justify-center gap-1.5 bg-slate-800 hover:bg-slate-700 text-[10px] font-bold text-slate-300 py-2 rounded-lg border border-slate-700/50 transition">
                 <i class="fa-solid fa-database text-sky-400"></i> Conexão Supabase
             </button>
+            <button onclick="totreLogout()" class="totre-logout"><i class="fa-solid fa-arrow-right-from-bracket"></i> Sair</button>
         </div>
     </aside>
 
@@ -2623,10 +2695,30 @@ async function reabrirTituloFinanceiro(id) {
     }
 }
     </script>
+
+<script id="totre-auth-script">
+  (function(){
+    const SESSION='totre_authenticated_session';
+    const REMEMBER='totre_authenticated_remember';
+    function showApp(){document.getElementById('totreLogin')?.classList.add('hidden');}
+    function showLogin(){document.getElementById('totreLogin')?.classList.remove('hidden');}
+    window.totreLogout=function(){sessionStorage.removeItem(SESSION);localStorage.removeItem(REMEMBER);showLogin();document.getElementById('totrePassword').value='';};
+    document.addEventListener('DOMContentLoaded',function(){
+      if(sessionStorage.getItem(SESSION)==='1'||localStorage.getItem(REMEMBER)==='1') showApp(); else showLogin();
+      const form=document.getElementById('totreLoginForm');
+      const pwd=document.getElementById('totrePassword');
+      const err=document.getElementById('totreLoginError');
+      document.getElementById('toggleTotrePassword')?.addEventListener('click',function(){pwd.type=pwd.type==='password'?'text':'password';this.querySelector('i').className=pwd.type==='password'?'fa-regular fa-eye':'fa-regular fa-eye-slash';});
+      document.getElementById('totreForgot')?.addEventListener('click',function(e){e.preventDefault();alert('Para redefinir a senha nesta versão do GitHub Pages, entre em contato com o administrador do sistema.');});
+      form?.addEventListener('submit',function(e){e.preventDefault();const email=document.getElementById('totreEmail').value.trim().toLowerCase();const pass=pwd.value; if(email==='admin@totre.com.br'&&pass==='Totre@123'){err.classList.remove('show');sessionStorage.setItem(SESSION,'1');if(document.getElementById('totreRemember').checked)localStorage.setItem(REMEMBER,'1');showApp();}else{err.classList.add('show');}});
+    });
+  })();
+</script>
+
     <!-- Registo do Service Worker para o PWA -->
 <script>
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('./sw.js')
+    navigator.serviceWorker.register('sw.js')
       .then(() => console.log("PWA Service Worker registado com sucesso!"))
       .catch((err) => console.log("Erro ao registar o PWA Service Worker: ", err));
   }

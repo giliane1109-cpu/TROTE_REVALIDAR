@@ -2,11 +2,8 @@
   "name": "TOTRE Gestão Empresarial",
   "short_name": "TOTRE",
   "start_url": "./",
-  "scope": "./",
   "display": "standalone",
-  "background_color": "#0b1329",
-  "theme_color": "#0284c7",
-  "icons": [
-    {"src":"assets/icone-totre.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}
-  ]
+  "background_color": "#f5f7fb",
+  "theme_color": "#2463eb",
+  "icons": []
 }
