@@ -37,57 +37,137 @@
     </style>
     <!-- Ligação para o PWA (Manifesto e Cor do Tema) -->
     <link rel="icon" type="image/png" href="icone-totre.png">
-    <meta name="theme-color" content="#0284c7">
+    <meta name="theme-color" content="#052d61">
 
-    <style id="totre-approved-ui">
-      :root{--navy:#072b5c;--navy2:#031d42;--blue:#0b67f5;--blue2:#2f7df4;--bg:#f5f8fc;--card:#fff;--ink:#0d1b3a;--muted:#667085;--line:#dfe7f1;--green:#12ad64;--red:#ef4355;--orange:#ff8a1c;--purple:#7a4ce0}
-      *{box-sizing:border-box} body.totre-modern{background:var(--bg)!important;color:var(--ink)!important;font-family:Inter,"Segoe UI",Arial,sans-serif}
-      body.totre-modern .bg-slate-950{background:var(--bg)!important} body.totre-modern .bg-slate-900{background:#fff!important}
+    <style id="totre-modern-theme">
+      :root{--totre:#2463eb;--totre2:#6f5cf3;--ink:#172033;--muted:#6b7280;--line:#e7eaf0;--surface:#ffffff;--bg:#f5f7fb}
+      body.totre-modern{background:var(--bg)!important;color:var(--ink)!important;font-family:Inter,"Segoe UI",Arial,sans-serif}
+      body.totre-modern .bg-slate-950{background:var(--bg)!important}
+      body.totre-modern .bg-slate-900{background:#fff!important}
       body.totre-modern .bg-slate-800,body.totre-modern .bg-slate-800\/90,body.totre-modern .bg-slate-800\/80,body.totre-modern .bg-slate-800\/60,body.totre-modern .bg-slate-800\/40{background:#f8fafc!important}
       body.totre-modern .border-slate-800,body.totre-modern .border-slate-700,body.totre-modern .border-slate-700\/50,body.totre-modern .border-slate-700\/60,body.totre-modern .border-slate-700\/80{border-color:var(--line)!important}
-      body.totre-modern .text-white,body.totre-modern .text-slate-200,body.totre-modern .text-slate-300{color:var(--ink)!important} body.totre-modern .text-slate-400,body.totre-modern .text-slate-500{color:var(--muted)!important}
-      body.totre-modern aside{width:252px!important;background:linear-gradient(180deg,var(--navy),var(--navy2))!important;border:0!important;box-shadow:8px 0 30px rgba(2,24,57,.12);padding:0 12px;z-index:40}
-      .totre-sidebar-logo{display:flex;align-items:center;justify-content:center;padding:22px 6px 18px;border-bottom:1px solid rgba(255,255,255,.12)} .totre-sidebar-logo img{width:178px;height:auto;filter:brightness(0) invert(1)}
-      body.totre-modern aside .nav-link{height:50px;color:#fff!important;border:0!important;border-radius:9px!important;font-size:14px!important;font-weight:650!important;padding:0 15px!important;gap:14px!important;opacity:.92}
-      body.totre-modern aside .nav-link i{color:#fff!important;font-size:18px!important;width:22px!important} body.totre-modern aside .nav-link:hover{background:rgba(255,255,255,.10)!important;color:#fff!important}
-      body.totre-modern aside .nav-link.active{background:linear-gradient(90deg,#0d6cf4,#1c74e9)!important;color:#fff!important;box-shadow:0 8px 20px rgba(0,93,224,.32)!important}
-      .totre-user-card{border:1px solid rgba(255,255,255,.18);border-radius:11px;padding:13px;color:#fff;background:rgba(255,255,255,.04)} .totre-user-card strong{font-size:13px}.totre-user-card small{color:#d2dded;font-size:10px}
-      .totre-logout{margin-top:8px;border:1px solid rgba(255,255,255,.15)!important;background:rgba(255,255,255,.06)!important;color:#fff!important}.totre-logout:hover{background:rgba(255,255,255,.13)!important}
-      main{max-width:none!important;padding:24px 28px 70px!important} .tab-content>div.bg-slate-900,.tab-content>section,.tab-content .bg-slate-900{border-radius:12px!important}
-      body.totre-modern input,body.totre-modern select,body.totre-modern textarea{background:#fff!important;color:var(--ink)!important;border-color:#cfd9e6!important;border-radius:8px!important} body.totre-modern input:focus,body.totre-modern select:focus,body.totre-modern textarea:focus{border-color:var(--blue)!important;box-shadow:0 0 0 3px rgba(11,103,245,.12)!important}
-      body.totre-modern table{background:#fff} body.totre-modern thead{background:#f8fafc!important;color:#53627a!important} body.totre-modern tbody tr:hover{background:#f4f8ff!important}
-      body.totre-modern .shadow,body.totre-modern .shadow-md,body.totre-modern .shadow-2xl{box-shadow:0 3px 12px rgba(23,43,77,.07)!important}
-      body.totre-modern button.bg-sky-600,body.totre-modern button.bg-emerald-600{background:linear-gradient(135deg,#0b67f5,#0758d7)!important;color:#fff!important}
-      .approved-page-title{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:4px}.approved-page-title h2{font-size:32px;line-height:1.1;font-weight:800;color:var(--ink);letter-spacing:-.02em}.approved-page-title p{font-size:15px;color:var(--muted);margin-top:8px}.approved-actions{display:flex;align-items:center;gap:12px}.approved-period,.approved-refresh{height:45px;border:1px solid #cfd9e6;border-radius:8px;background:#fff;padding:0 16px;color:#16213b;font-size:13px;display:flex;align-items:center;gap:10px}.approved-refresh{background:var(--blue);color:#fff;border-color:var(--blue)}
-      .approved-kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.approved-card{background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 3px 12px rgba(23,43,77,.07)}.approved-kpi{padding:20px;display:flex;align-items:center;gap:16px;min-height:122px}.approved-icon{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:25px;flex:0 0 auto}.approved-icon.blue{background:linear-gradient(145deg,#0870ff,#075bd6)}.approved-icon.green{background:linear-gradient(145deg,#28c276,#0b9d59)}.approved-icon.orange{background:linear-gradient(145deg,#ff992b,#ff6f00)}.approved-icon.purple{background:linear-gradient(145deg,#8a5ce8,#6537d3)}.approved-kpi-label{font-size:13px;color:#1a2947}.approved-kpi-value{font-size:22px;font-weight:800;color:#0c1936;margin-top:3px}.approved-trend{font-size:12px;color:#10a85b;margin-top:10px}.approved-grid-2{display:grid;grid-template-columns:1.35fr 1fr;gap:16px}.approved-panel{padding:18px 20px}.approved-panel h3{font-size:18px;font-weight:750;color:#111e3c;margin-bottom:12px}.approved-chart{height:275px;position:relative}.approved-bottom{display:grid;grid-template-columns:1fr 1fr;gap:16px}.approved-table{width:100%;font-size:12px}.approved-table th,.approved-table td{padding:10px 8px;border-bottom:1px solid #e7edf5;text-align:left}.approved-table th{color:#40506a;font-weight:650}.approved-status{border-radius:6px;padding:4px 9px;font-size:10px;font-weight:650;display:inline-block}.approved-status.green{background:#ddf6e7;color:#078a46}.approved-status.blue{background:#e2efff;color:#0762d8}.approved-status.orange{background:#fff0dc;color:#df6a00}.approved-status.red{background:#ffe2e5;color:#d92b3b}
-      #totreLogin{position:fixed;inset:0;z-index:9999;display:grid;grid-template-columns:1.12fr .88fr;background:linear-gradient(125deg,#f8fbff,#edf4ff);overflow:hidden} #totreLogin.hidden{display:none}
-      .login-art{position:relative;padding:70px 8vw;display:flex;flex-direction:column;justify-content:center;overflow:hidden;background:linear-gradient(135deg,#f1f7ff 0%,#eef5ff 100%)} .login-art:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 8% 20%,rgba(33,116,255,.14) 0 72px,transparent 73px),radial-gradient(circle at 20% 70%,rgba(33,116,255,.13) 0 120px,transparent 121px),linear-gradient(90deg,rgba(24,103,235,.10) 1px,transparent 1px),linear-gradient(rgba(24,103,235,.10) 1px,transparent 1px);background-size:auto,auto,165px 165px,165px 165px;opacity:.9}.login-brand{position:relative;z-index:2;max-width:530px}.login-logo img{width:455px;max-width:100%;height:auto}.login-tagline{font-size:36px;line-height:1.35;color:#15213a;font-weight:450;max-width:520px;margin-top:34px}
-      .login-panel{display:flex;align-items:center;justify-content:center;padding:50px;background:rgba(246,250,255,.65)}.login-card{width:100%;max-width:510px;background:#fff;border:1px solid #e3e9f1;border-radius:16px;padding:48px 50px;box-shadow:0 15px 42px rgba(35,61,101,.13)}.login-card h1{font-size:36px;color:#0d2d59;font-weight:800;text-align:center;margin:0 0 6px}.login-card .sub{text-align:center;color:#6c788b;margin-bottom:34px;font-size:20px}.field{margin-bottom:20px}.field label{display:block;font-weight:700;color:#202c41;margin-bottom:9px;font-size:15px}.field-wrap{position:relative}.field-wrap i{position:absolute;left:15px;top:50%;transform:translateY(-50%);color:#758196;font-size:18px}.field-wrap input{width:100%;height:58px;padding:0 48px;border:1px solid #c8d2df;border-radius:7px;font-size:16px;outline:none}.field-wrap button{position:absolute;right:8px;top:50%;transform:translateY(-50%);background:transparent;border:0;color:#6c788b;padding:9px}.login-row{display:flex;justify-content:space-between;align-items:center;margin:4px 0 25px;font-size:14px;color:#38455a}.login-row label{display:flex;align-items:center;gap:9px}.login-row a{color:#0567ee;font-weight:600;text-decoration:none}.login-submit{width:100%;height:60px;border:0;border-radius:7px;color:#fff;font-weight:700;font-size:19px;background:linear-gradient(90deg,#0a70f8,#0963e7);box-shadow:0 8px 20px rgba(9,100,235,.22)}.login-note{margin-top:28px;padding:16px;border:1px solid #e1e8f1;border-radius:7px;background:#f8fbff;color:#67748a;font-size:13px;text-align:center}.login-error{display:none;margin:-5px 0 14px;padding:10px 12px;background:#fff1f2;border:1px solid #fecdd3;color:#be123c;border-radius:8px;font-size:12px}.login-error.show{display:block}
-      @media(max-width:1100px){.approved-kpis{grid-template-columns:repeat(2,1fr)}.approved-grid-2,.approved-bottom{grid-template-columns:1fr}} @media(max-width:900px){#totreLogin{grid-template-columns:1fr}.login-art{display:none}.login-panel{padding:20px}.login-card{padding:32px 24px}.approved-kpis{grid-template-columns:1fr}.approved-actions{display:none}main{padding:18px 14px 78px!important}.approved-page-title h2{font-size:26px}}
+      body.totre-modern .text-white,body.totre-modern .text-slate-200,body.totre-modern .text-slate-300{color:var(--ink)!important}
+      body.totre-modern .text-slate-400,body.totre-modern .text-slate-500{color:var(--muted)!important}
+      body.totre-modern aside{box-shadow:8px 0 32px rgba(15,23,42,.05);z-index:20}
+      body.totre-modern .nav-link{color:#5b6475!important;border-right:0!important}
+      body.totre-modern .nav-link:hover{background:#eff4ff!important;color:var(--totre)!important}
+      body.totre-modern .nav-link.active{background:linear-gradient(135deg,#eaf1ff,#f1eeff)!important;color:var(--totre)!important;border-right:0!important;box-shadow:inset 0 0 0 1px #dce6ff}
+      body.totre-modern input,body.totre-modern select,body.totre-modern textarea{background:#fff!important;color:var(--ink)!important;border-color:#dfe3eb!important}
+      body.totre-modern input:focus,body.totre-modern select:focus,body.totre-modern textarea:focus{border-color:var(--totre)!important;box-shadow:0 0 0 3px rgba(36,99,235,.12)!important}
+      body.totre-modern table{background:#fff}
+      body.totre-modern thead{background:#f8fafc!important;color:#6b7280!important}
+      body.totre-modern tbody tr:hover{background:#f8fbff}
+      body.totre-modern .shadow,body.totre-modern .shadow-md,body.totre-modern .shadow-2xl{box-shadow:0 10px 30px rgba(15,23,42,.07)!important}
+      body.totre-modern button.bg-sky-600,body.totre-modern button.bg-emerald-600{background:linear-gradient(135deg,var(--totre),var(--totre2))!important;color:#fff!important}
+      body.totre-modern .fixed.bg-black\/80,body.totre-modern .fixed.bg-black\/70,body.totre-modern .fixed.bg-black\/85{background:rgba(15,23,42,.45)!important;backdrop-filter:blur(5px)}
+      .totre-brand-chip{background:linear-gradient(135deg,var(--totre),var(--totre2));color:#fff;border-radius:12px;padding:9px 12px;font-weight:900;letter-spacing:.14em;text-align:center;box-shadow:0 8px 20px rgba(36,99,235,.22)}
+      .totre-logout{width:100%;display:flex;align-items:center;justify-content:center;gap:8px;border:1px solid #e4e8ef;background:#fff;color:#64748b;border-radius:10px;padding:9px;font-weight:700;font-size:11px;margin-top:8px}
+      .totre-logout:hover{background:#fff1f2;color:#e11d48;border-color:#fecdd3}
+      #totreLogin{position:fixed;inset:0;z-index:9999;display:grid;grid-template-columns:minmax(360px,1fr) minmax(420px,560px);background:#f8f9fc;overflow:hidden}
+      #totreLogin.hidden{display:none}
+      .login-art{position:relative;padding:72px 8vw;display:flex;flex-direction:column;justify-content:center;overflow:hidden;background:linear-gradient(135deg,#fbfcff 0%,#f2f5ff 100%)}
+      .login-art:before,.login-art:after{content:"";position:absolute;border-radius:28px;transform:rotate(45deg);background:linear-gradient(135deg,rgba(58,116,255,.12),rgba(130,98,255,.05));box-shadow:0 30px 80px rgba(56,92,200,.12)}
+      .login-art:before{width:330px;height:330px;left:14%;top:15%}.login-art:after{width:430px;height:430px;left:34%;bottom:-22%}
+      .login-brand{position:relative;z-index:2;max-width:470px}
+      .login-logo{display:flex;align-items:center;gap:18px;margin-bottom:30px}
+      .login-mark{width:82px;height:82px;border-radius:24px;background:linear-gradient(145deg,#2873ff,#764cf2);display:grid;place-items:center;box-shadow:0 22px 45px rgba(58,87,216,.28)}
+      .login-mark svg{width:52px;height:52px}.login-word{font-size:60px;line-height:1;font-weight:900;letter-spacing:.04em;color:#263147}
+      .login-tagline{font-size:25px;line-height:1.35;color:#667085;font-weight:600;max-width:440px}
+      .login-panel{display:flex;align-items:center;justify-content:center;padding:42px;background:rgba(255,255,255,.82);backdrop-filter:blur(15px);box-shadow:-24px 0 70px rgba(28,44,85,.07)}
+      .login-card{width:100%;max-width:420px;background:#fff;border:1px solid #edf0f5;border-radius:28px;padding:42px;box-shadow:0 28px 70px rgba(25,39,78,.12)}
+      .login-card h1{font-size:27px;color:#20283a;font-weight:850;text-align:center;margin:0 0 7px}.login-card .sub{text-align:center;color:#8a93a3;margin-bottom:28px;font-size:14px}
+      .field{margin-bottom:17px}.field label{display:block;font-weight:750;color:#414a5c;margin-bottom:8px;font-size:13px}.field-wrap{position:relative}.field-wrap i{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:#9aa3b3}.field-wrap input{width:100%;height:50px;padding:0 44px 0 42px;border:1px solid #dfe3ea;border-radius:12px;font-size:14px;outline:none}.field-wrap button{position:absolute;right:9px;top:50%;transform:translateY(-50%);background:transparent;border:0;color:#9aa3b3;padding:8px}
+      .login-row{display:flex;justify-content:space-between;align-items:center;gap:15px;margin:4px 0 22px;font-size:12px;color:#697386}.login-row label{display:flex;align-items:center;gap:8px}.login-row a{color:#4169e1;font-weight:700;text-decoration:none}
+      .login-submit{width:100%;height:50px;border:0;border-radius:12px;color:#fff;font-weight:800;font-size:14px;background:linear-gradient(90deg,#2f73e8,#6c5de9);box-shadow:0 13px 24px rgba(62,94,220,.26)}
+      .login-submit:hover{filter:brightness(1.05)}.login-note{text-align:center;color:#9aa3b2;font-size:11px;margin-top:24px;line-height:1.5}.login-error{display:none;margin:-6px 0 14px;padding:10px 12px;background:#fff1f2;border:1px solid #fecdd3;color:#be123c;border-radius:10px;font-size:12px}.login-error.show{display:block}
+      @media(max-width:900px){#totreLogin{grid-template-columns:1fr}.login-art{display:none}.login-panel{padding:24px;background:linear-gradient(145deg,#f4f7ff,#fff)}.login-card{padding:30px 24px;border-radius:22px}.login-card:before{content:"TOTRE";display:block;text-align:center;font-size:34px;font-weight:900;color:#2a4a99;margin-bottom:18px}}
     </style>
 
+
+<style id="totre-approved-ui-v3">
+:root{
+  --navy:#052d61;--navy2:#001f47;--blue:#1264ee;--blue2:#0d54cf;--bg:#f5f8fc;--card:#fff;
+  --ink:#12203a;--muted:#64748b;--line:#dfe7f2;--green:#18b56b;--red:#ef4444;--orange:#f59e0b;--purple:#7c4de8;
+}
+*{box-sizing:border-box} body.totre-modern{background:var(--bg)!important;color:var(--ink)!important;font-family:Inter,"Segoe UI",Arial,sans-serif;font-size:13px;line-height:1.45}
+body.totre-modern .bg-slate-950{background:var(--bg)!important} body.totre-modern .bg-slate-900{background:#fff!important}
+body.totre-modern .bg-slate-800,body.totre-modern .bg-slate-800\/90,body.totre-modern .bg-slate-800\/80,body.totre-modern .bg-slate-800\/60,body.totre-modern .bg-slate-800\/40{background:#f8fafc!important}
+body.totre-modern .border-slate-800,body.totre-modern .border-slate-700,body.totre-modern .border-slate-700\/50,body.totre-modern .border-slate-700\/60,body.totre-modern .border-slate-700\/80{border-color:var(--line)!important}
+body.totre-modern .text-white,body.totre-modern .text-slate-200,body.totre-modern .text-slate-300{color:var(--ink)!important}
+body.totre-modern .text-slate-400,body.totre-modern .text-slate-500{color:var(--muted)!important}
+body.totre-modern main{padding:24px 28px 40px!important;max-width:none!important;gap:18px!important}
+.totre-sidebar{width:252px!important;background:linear-gradient(180deg,var(--navy2) 0%,var(--navy) 55%,#042752 100%)!important;border:0!important;color:white!important;box-shadow:8px 0 28px rgba(2,26,61,.13);position:relative;z-index:40}
+.totre-sidebar .side-brand{padding:24px 20px 20px;border-bottom:1px solid rgba(255,255,255,.10)}
+.totre-sidebar .side-brand img{width:174px;height:auto;filter:brightness(0) invert(1);object-fit:contain}
+.totre-sidebar .side-company{margin-top:14px;padding:11px 12px;border:1px solid rgba(255,255,255,.18);border-radius:9px;background:rgba(255,255,255,.06);font-size:11px;color:#dbeafe}
+.totre-sidebar nav{padding:16px 10px!important}.totre-sidebar .nav-link{color:#eef5ff!important;border:0!important;border-radius:7px!important;padding:12px 14px!important;font-size:13px!important;font-weight:600!important;justify-content:flex-start!important}
+.totre-sidebar .nav-link i{color:#e6f1ff!important;font-size:16px!important;width:22px!important}.totre-sidebar .nav-link:hover{background:rgba(255,255,255,.10)!important;color:#fff!important}.totre-sidebar .nav-link.active{background:linear-gradient(90deg,#0d63e9,#0874ff)!important;color:#fff!important;box-shadow:0 8px 20px rgba(0,98,255,.28)!important}
+.totre-sidebar .side-footer{padding:14px 12px 18px;border-top:1px solid rgba(255,255,255,.10)}.totre-sidebar .user-card{border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:12px;background:rgba(255,255,255,.06);display:flex;align-items:center;gap:10px;color:#fff}.totre-sidebar .user-avatar{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:#176dff;color:white;font-weight:800}.totre-sidebar .user-card small{color:#cbdcf5;display:block}.totre-sidebar .totre-logout{margin-top:8px;border-color:rgba(255,255,255,.15)!important;background:transparent!important;color:#dbeafe!important}
+.totre-page-head{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:2px}.totre-page-head h2{font-size:28px!important;line-height:1.1!important;color:var(--ink)!important;font-weight:800!important;letter-spacing:-.02em}.totre-page-head p{font-size:13px!important;color:var(--muted)!important;margin-top:6px}.head-actions{display:flex;gap:10px;align-items:center}.period-box,.top-icon{height:42px;border:1px solid var(--line);border-radius:8px;background:#fff;display:flex;align-items:center;gap:10px;padding:0 14px;color:var(--ink);font-weight:600}.top-icon{width:42px;justify-content:center;padding:0;position:relative}.top-icon b{position:absolute;top:-7px;right:-5px;background:var(--red);color:white;width:18px;height:18px;border-radius:50%;font-size:10px;display:grid;place-items:center}
+.totre-card{background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:0 5px 14px rgba(20,48,84,.055)}.metric-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.metric-card{padding:18px 20px;display:flex;gap:14px;align-items:center;min-height:112px}.metric-icon{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:23px;flex:0 0 auto}.metric-card .label{font-size:12px;font-weight:700;color:#2c3b55;text-transform:uppercase;letter-spacing:.02em}.metric-card .value{font-size:22px;font-weight:800;color:var(--ink);white-space:nowrap}.metric-card .trend{font-size:11px;color:#16a34a;margin-top:7px}.metric-blue{background:linear-gradient(135deg,#0d6efd,#1c56e9)}.metric-green{background:linear-gradient(135deg,#2cc677,#0da45b)}.metric-red{background:linear-gradient(135deg,#ff6574,#ec3c50)}.metric-purple{background:linear-gradient(135deg,#8d5bf1,#6d38df)}.metric-orange{background:linear-gradient(135deg,#ff9c26,#f47c0c)}
+.panel-grid{display:grid;grid-template-columns:1.3fr .9fr;gap:14px}.dashboard-panel{padding:18px 18px 14px;min-height:300px}.panel-title{font-size:16px;font-weight:800;color:var(--ink);display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}.chart-wrap{height:230px}.lower-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.data-panel{padding:16px}.data-panel table{width:100%;border-collapse:collapse;font-size:12px}.data-panel th{padding:10px 8px;color:#43516b;font-weight:700;border-bottom:1px solid var(--line);text-align:left}.data-panel td{padding:10px 8px;border-bottom:1px solid #eef2f7;color:#334155}.badge{display:inline-flex;align-items:center;padding:4px 9px;border-radius:6px;font-size:10px;font-weight:700}.badge-green{background:#dcfce7;color:#15803d}.badge-blue{background:#dbeafe;color:#1d4ed8}.badge-orange{background:#ffedd5;color:#c2410c}.badge-red{background:#fee2e2;color:#dc2626}
+.toolbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:14px}.toolbar .search{position:relative;flex:1;min-width:250px}.toolbar .search i{position:absolute;left:13px;top:50%;transform:translateY(-50%);color:#64748b}.toolbar input,.toolbar select{height:42px!important;border:1px solid var(--line)!important;border-radius:8px!important;background:white!important;color:var(--ink)!important;font-size:12px!important}.toolbar .search input{width:100%;padding-left:38px!important}.btn-primary{height:42px;padding:0 16px;border:0;border-radius:8px;background:linear-gradient(135deg,#176dff,#0758e7);color:#fff;font-weight:700;display:inline-flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 7px 16px rgba(13,100,238,.2)}.btn-outline{height:42px;padding:0 16px;border:1px solid #b9cdf0;border-radius:8px;background:#fff;color:#0d5ce5;font-weight:700;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+.module-layout{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:0;min-height:620px}.module-main{min-width:0}.module-side{border-left:1px solid var(--line);background:#fff;padding:20px;min-width:0}.modern-table-wrap{overflow:auto}.modern-table{width:100%;border-collapse:collapse;font-size:12px}.modern-table thead{background:#f8fafc!important}.modern-table th{padding:13px 14px;text-align:left;color:#475569;font-size:11px;font-weight:700;border-bottom:1px solid var(--line);white-space:nowrap}.modern-table td{padding:12px 14px;border-bottom:1px solid #edf1f6;color:#334155;white-space:nowrap}.modern-table tr:hover{background:#f4f8ff}.modern-table tr.selected-row{background:#eaf3ff}.action-icons{display:flex;gap:10px;align-items:center;justify-content:center}.action-icons button{background:none!important;border:0!important;padding:3px!important;box-shadow:none!important;font-size:15px}.icon-whats{color:#16a34a}.icon-edit{color:#0b65ed}.icon-pdf{color:#f0a000}.icon-delete{color:#ef4444}
+.section-tabs{display:flex;gap:4px;border-bottom:1px solid var(--line);margin-bottom:14px}.section-tabs button{padding:12px 16px;border:0;background:transparent;color:#53627b;font-weight:700;border-bottom:2px solid transparent}.section-tabs button.active{color:#0d63ee;border-bottom-color:#0d63ee}.summary-box{border:1px solid var(--line);border-radius:9px;padding:15px;background:#fbfdff}.summary-box h3{font-size:16px;font-weight:800;margin-bottom:14px}.summary-line{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid #edf1f6;color:#475569}.summary-line strong{color:var(--ink)}
+#totreLogin{grid-template-columns:1.15fr .85fr!important;background:radial-gradient(circle at 32% 45%,#fff 0,#f3f7ff 50%,#edf4ff 100%)!important}.login-art{background:transparent!important;padding:60px 7vw!important}.login-art:before,.login-art:after{border-radius:0!important;transform:none!important;background:linear-gradient(135deg,rgba(48,119,255,.18),rgba(44,111,232,.03))!important;box-shadow:none!important}.login-art:before{width:430px!important;height:100%!important;left:0!important;top:0!important;clip-path:polygon(0 0,58% 0,58% 11%,90% 11%,90% 28%,58% 28%,58% 53%,100% 53%,100% 73%,58% 73%,58% 100%,0 100%)}.login-art:after{width:240px!important;height:240px!important;left:3%!important;bottom:-30px!important;border-radius:50%!important}.login-logo{gap:20px!important}.login-mark{width:auto!important;height:auto!important;border-radius:0!important;background:transparent!important;box-shadow:none!important}.login-mark img{width:122px;height:auto}.login-word{font-size:70px!important;color:#0d315f!important}.login-tagline{font-size:30px!important;color:#16233b!important;font-weight:500!important}.login-panel{background:transparent!important;box-shadow:none!important}.login-card{max-width:480px!important;border-radius:15px!important;padding:44px!important;box-shadow:0 12px 35px rgba(20,45,90,.14)!important}.login-card h1{font-size:31px!important;color:#0b315f!important}.login-card .sub{font-size:18px!important}.login-submit{background:linear-gradient(90deg,#0e6df2,#075de5)!important;border-radius:6px!important;height:52px!important}.login-note{border:1px solid #dce8f8;background:#f8fbff;border-radius:7px;padding:13px;text-align:left!important;color:#64748b!important}
+body.totre-modern input,body.totre-modern select,body.totre-modern textarea{background:#fff!important;color:var(--ink)!important;border-color:#d7e1ee!important}body.totre-modern input:focus,body.totre-modern select:focus,body.totre-modern textarea:focus{border-color:#176dff!important;box-shadow:0 0 0 3px rgba(23,109,255,.10)!important}
+body.totre-modern .fixed.bg-black\/80,body.totre-modern .fixed.bg-black\/70,body.totre-modern .fixed.bg-black\/85{background:rgba(6,25,52,.66)!important;backdrop-filter:blur(3px)}body.totre-modern .fixed>div.bg-slate-900{border-radius:12px!important;border-color:#dbe4ef!important;box-shadow:0 22px 60px rgba(2,25,60,.28)!important}
+body.totre-modern button.bg-sky-600,body.totre-modern button.bg-emerald-600{background:linear-gradient(135deg,#176dff,#0758e7)!important;color:white!important}body.totre-modern button.bg-rose-600{background:#e53935!important}
+.config-nav,.report-nav{display:flex;gap:20px;border-bottom:1px solid var(--line);padding:0 4px}.config-nav button,.report-nav button{border:0;background:none;padding:12px 4px;color:#50607a;font-weight:700}.config-nav button.active,.report-nav button.active{color:#0e65ed;border-bottom:2px solid #0e65ed}.config-grid{display:grid;grid-template-columns:220px minmax(0,1fr) 360px;gap:14px}.config-menu{padding:8px}.config-menu button{display:flex;width:100%;align-items:center;gap:10px;padding:13px;border:0;background:white;color:#53627a;text-align:left;border-radius:7px}.config-menu button.active{background:#eaf3ff;color:#0d61ea;border-left:3px solid #0d61ea}.settings-form{padding:18px}.settings-preview{padding:18px}.report-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.report-chart-grid{display:grid;grid-template-columns:1.2fr .8fr .8fr;gap:12px}
+@media(max-width:1200px){.metric-grid,.report-kpis{grid-template-columns:repeat(2,1fr)}.panel-grid,.lower-grid,.report-chart-grid{grid-template-columns:1fr}.module-layout{grid-template-columns:1fr}.module-side{border-left:0;border-top:1px solid var(--line)}.config-grid{grid-template-columns:190px 1fr}.settings-preview{display:none}}
+@media(max-width:900px){.totre-sidebar{display:none!important}body.totre-modern main{padding:14px!important}.metric-grid,.report-kpis{grid-template-columns:1fr}.totre-page-head{flex-direction:column}.head-actions{width:100%;overflow:auto}.config-grid{grid-template-columns:1fr}.config-menu{display:flex;overflow:auto}.config-menu button{white-space:nowrap;width:auto}.login-mark img{width:86px}.login-word{font-size:44px!important}}
+</style>
 
 </head>
 <body class="totre-modern flex h-screen overflow-hidden text-[11px] leading-tight">
 
     <section id="totreLogin" aria-label="Acesso ao TOTRE">
-      <div class="login-art"><div class="login-brand"><div class="login-logo"><img src="assets/totre-logo-aprovada.png" alt="TOTRE"></div><div class="login-tagline">Controle simples para<br>sua empresa crescer.</div></div></div>
-      <div class="login-panel"><form class="login-card" id="totreLoginForm"><h1>Bem-vindo ao TOTRE</h1><div class="sub">Gestão empresarial</div><div id="totreLoginError" class="login-error">E-mail ou senha inválidos.</div><div class="field"><label for="totreEmail">E-mail</label><div class="field-wrap"><i class="fa-regular fa-envelope"></i><input id="totreEmail" type="email" autocomplete="username" placeholder="Digite seu e-mail" required></div></div><div class="field"><label for="totrePassword">Senha</label><div class="field-wrap"><i class="fa-solid fa-lock"></i><input id="totrePassword" type="password" autocomplete="current-password" placeholder="Digite sua senha" required><button type="button" id="toggleTotrePassword" aria-label="Mostrar senha"><i class="fa-regular fa-eye"></i></button></div></div><div class="login-row"><label><input id="totreRemember" type="checkbox"> Manter conectado</label><a href="#" id="totreForgot">Esqueci minha senha</a></div><button class="login-submit" type="submit">Entrar</button><div class="login-note"><i class="fa-solid fa-shield-halved" style="color:#0b67f5;margin-right:8px"></i>Informe seu e-mail e senha para acessar o sistema.</div></form></div>
+      <div class="login-art">
+        <div class="login-brand">
+          <div class="login-logo">
+            <div class="login-mark" aria-hidden="true"><img src="totre-logo.png" alt=""></div>
+            
+          </div>
+          <div class="login-tagline">Controle simples para sua empresa crescer.</div>
+        </div>
+      </div>
+      <div class="login-panel">
+        <form class="login-card" id="totreLoginForm">
+          <h1>Bem-vindo ao TOTRE</h1>
+          <div class="sub">Gestão empresarial</div>
+          <div id="totreLoginError" class="login-error">E-mail ou senha inválidos.</div>
+          <div class="field"><label for="totreEmail">E-mail</label><div class="field-wrap"><i class="fa-regular fa-envelope"></i><input id="totreEmail" type="email" autocomplete="username" placeholder="seu@email.com" required></div></div>
+          <div class="field"><label for="totrePassword">Senha</label><div class="field-wrap"><i class="fa-solid fa-lock"></i><input id="totrePassword" type="password" autocomplete="current-password" placeholder="Digite sua senha" required><button type="button" id="toggleTotrePassword" aria-label="Mostrar senha"><i class="fa-regular fa-eye"></i></button></div></div>
+          <div class="login-row"><label><input id="totreRemember" type="checkbox"> Manter conectado</label><a href="#" id="totreForgot">Esqueci minha senha</a></div>
+          <button class="login-submit" type="submit">Entrar</button>
+          <div class="login-note">Acesso inicial: <strong>admin@totre.com.br</strong><br>Senha: <strong>Totre@123</strong><br><br>TOTRE Gestão Empresarial</div>
+        </form>
+      </div>
     </section>
-    <!-- SIDEBAR LATERAL APROVADA -->
 
-    <aside class="w-52 bg-slate-900 border-r border-slate-800 flex flex-col justify-between shrink-0 hidden md:flex">
-      <div><div class="totre-sidebar-logo"><img src="assets/totre-logo-aprovada.png" alt="TOTRE"></div><nav class="py-4 space-y-2">
-        <button onclick="switchTab('dashboardTab')" id="nav-dashboardTab" class="nav-link active w-full flex items-center"><i class="fa-solid fa-house"></i>Visão Geral</button>
-        <button onclick="switchTab('cadastrosTab')" id="nav-cadastrosTab" class="nav-link w-full flex items-center"><i class="fa-solid fa-users"></i>Clientes</button>
-        <button onclick="switchTab('vendasTab')" id="nav-vendasTab" class="nav-link w-full flex items-center"><i class="fa-solid fa-file-lines"></i>Pedidos</button>
-        <button onclick="switchTab('financeiroTab')" id="nav-financeiroTab" class="nav-link w-full flex items-center"><i class="fa-solid fa-circle-dollar-to-slot"></i>Financeiro</button>
-        <button onclick="switchTab('relatoriosTab')" id="nav-relatoriosTab" class="nav-link w-full flex items-center"><i class="fa-solid fa-chart-column"></i>Relatórios</button>
-        <button onclick="switchTab('configuracoesTab')" id="nav-configuracoesTab" class="nav-link w-full flex items-center"><i class="fa-solid fa-gear"></i>Configurações</button>
-      </nav></div>
-      <div class="pb-4"><div class="totre-user-card"><div class="flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center text-white text-lg"><i class="fa-solid fa-user"></i></div><div class="min-w-0"><strong class="block">Admin</strong><small class="block">Administrador</small></div></div></div><div class="mt-3 px-2 text-white"><strong id="sideEmpresaNome" class="block text-[12px] truncate">--</strong><small class="text-[10px] text-blue-100">Gestão empresarial</small></div><button onclick="toggleConfigModal()" class="totre-logout"><i class="fa-solid fa-database"></i> Conexão Supabase</button><button onclick="totreLogout()" class="totre-logout"><i class="fa-solid fa-arrow-right-from-bracket"></i> Sair</button></div>
+
+    <!-- SIDEBAR APROVADA -->
+    <aside class="totre-sidebar flex flex-col justify-between shrink-0 hidden md:flex">
+      <div>
+        <div class="side-brand">
+          <img src="totre-logo.png" alt="TOTRE">
+          <div class="side-company"><span class="block text-[9px] opacity-70">Empresa ativa</span><strong id="sideEmpresaNome">--</strong></div>
+        </div>
+        <nav class="space-y-1">
+          <button onclick="switchTab('dashboardTab')" id="nav-dashboardTab" class="nav-link active w-full flex items-center gap-3"><i class="fa-solid fa-house"></i>Visão Geral</button>
+          <button onclick="switchTab('vendasTab')" id="nav-vendasTab" class="nav-link w-full flex items-center gap-3"><i class="fa-solid fa-cart-shopping"></i>Pedidos e vendas</button>
+          <button onclick="switchTab('financeiroTab')" id="nav-financeiroTab" class="nav-link w-full flex items-center gap-3"><i class="fa-solid fa-circle-dollar-to-slot"></i>Financeiro</button>
+          <button onclick="switchTab('cadastrosTab')" id="nav-cadastrosTab" class="nav-link w-full flex items-center gap-3"><i class="fa-solid fa-users"></i>Clientes e fornecedores</button>
+          <button onclick="switchTab('relatoriosTab')" id="nav-relatoriosTab" class="nav-link w-full flex items-center gap-3"><i class="fa-solid fa-chart-column"></i>Relatórios</button>
+          <button onclick="switchTab('configuracoesTab')" id="nav-configuracoesTab" class="nav-link w-full flex items-center gap-3"><i class="fa-solid fa-gear"></i>Configurações</button>
+        </nav>
+      </div>
+      <div class="side-footer">
+        <div class="user-card"><div class="user-avatar">AD</div><div class="min-w-0"><strong>Administrador</strong><small>admin@totre.com.br</small></div><i class="fa-solid fa-chevron-down ml-auto text-xs"></i></div>
+        <button onclick="toggleConfigModal()" class="totre-logout"><i class="fa-solid fa-database"></i> Conexão Supabase</button>
+        <button onclick="totreLogout()" class="totre-logout"><i class="fa-solid fa-arrow-right-from-bracket"></i> Sair</button>
+      </div>
     </aside>
-
 
     <!-- AREA PRINCIPAL DE CONTEÚDO -->
     <div class="flex-1 flex flex-col h-screen overflow-y-auto bg-slate-950">
@@ -366,249 +446,62 @@
         <main class="p-3 md:p-5 w-full mx-auto pb-16 md:pb-5 space-y-4 flex-1 flex flex-col">
 
             <!-- DASHBOARD TAB -->
-
             <section id="dashboardTab" class="tab-content active space-y-4">
-              <div class="approved-page-title"><div><h2>Visão Geral</h2><p>Resumo geral do seu negócio</p></div><div class="approved-actions"><div class="approved-period"><i class="fa-regular fa-calendar"></i><span>01/05/2025 - 31/05/2025</span><i class="fa-solid fa-chevron-down"></i></div><button class="approved-refresh" onclick="updateUI();renderizarGraficosDashboard()"><i class="fa-solid fa-rotate"></i>Atualizar</button><div class="relative text-xl px-2"><i class="fa-regular fa-bell"></i><span class="absolute -top-2 right-0 bg-red-500 text-white text-[9px] rounded-full w-4 h-4 flex items-center justify-center">3</span></div></div></div>
-              <div class="approved-kpis">
-                <div class="approved-card approved-kpi"><div class="approved-icon blue"><i class="fa-solid fa-dollar-sign"></i></div><div><div class="approved-kpi-label">FATURAMENTO</div><div id="dashTotalVendas" class="approved-kpi-value">R$ 0,00</div><div class="approved-trend">↑ 12,5% &nbsp; <span class="text-slate-400">vs. mês anterior</span></div></div></div>
-                <div class="approved-card approved-kpi"><div class="approved-icon green"><i class="fa-solid fa-wallet"></i></div><div><div class="approved-kpi-label">CONTAS A RECEBER</div><div id="dashReceitasRecebidas" class="approved-kpi-value">R$ 0,00</div><div class="approved-trend">↑ 8,7% &nbsp; <span class="text-slate-400">vs. mês anterior</span></div></div></div>
-                <div class="approved-card approved-kpi"><div class="approved-icon orange"><i class="fa-regular fa-credit-card"></i></div><div><div class="approved-kpi-label">CONTAS A PAGAR</div><div id="dashDespesasAVencer" class="approved-kpi-value">R$ 0,00</div><div class="approved-trend" style="color:#ef4355">↓ 5,3% &nbsp; <span class="text-slate-400">vs. mês anterior</span></div></div></div>
-                <div class="approved-card approved-kpi"><div class="approved-icon purple"><i class="fa-solid fa-chart-line"></i></div><div><div class="approved-kpi-label">SALDO PREVISTO</div><div id="dashSaldoRealBancos" class="approved-kpi-value">R$ 0,00</div><div class="approved-trend">↑ 15,2% &nbsp; <span class="text-slate-400">vs. mês anterior</span></div></div></div>
+              <div class="totre-page-head"><div><h2>Visão Geral</h2><p>Resumo geral do seu negócio</p></div><div class="head-actions"><div class="period-box"><i class="fa-regular fa-calendar"></i><span id="dashPeriodo">Este mês</span><i class="fa-solid fa-chevron-down text-[10px]"></i></div><button class="btn-outline" onclick="loadData()"><i class="fa-solid fa-rotate"></i>Atualizar</button><div class="top-icon"><i class="fa-regular fa-bell"></i><b>3</b></div><div class="top-icon">AD</div></div></div>
+              <div class="metric-grid">
+                <div class="totre-card metric-card"><div class="metric-icon metric-blue"><i class="fa-solid fa-dollar-sign"></i></div><div><div class="label">Vendas no mês</div><div id="dashVendasMes" class="value">R$ 0,00</div><div class="trend">↑ desempenho do período</div></div></div>
+                <div class="totre-card metric-card"><div class="metric-icon metric-green"><i class="fa-solid fa-wallet"></i></div><div><div class="label">Contas a receber</div><div id="dashReceitasRecebidas" class="value">R$ 0,00</div><div class="trend" id="dashReceberQtd">0 títulos</div></div></div>
+                <div class="totre-card metric-card"><div class="metric-icon metric-orange"><i class="fa-regular fa-credit-card"></i></div><div><div class="label">Contas a pagar</div><div id="dashDespesasAVencer" class="value">R$ 0,00</div><div class="trend" id="dashPagarQtd">0 títulos</div></div></div>
+                <div class="totre-card metric-card"><div class="metric-icon metric-purple"><i class="fa-solid fa-chart-line"></i></div><div><div class="label">Saldo previsto</div><div id="dashSaldoRealBancos" class="value">R$ 0,00</div><div class="trend">posição atual</div></div></div>
               </div>
               <div id="saldosBancosContainer" class="hidden"></div>
-              <div class="approved-grid-2"><div class="approved-card approved-panel"><div class="flex justify-between items-center"><h3>Evolução das vendas</h3><select class="text-xs px-3 py-2"><option>Últimos 30 dias</option></select></div><div class="approved-chart"><canvas id="graficoFaturamento"></canvas></div></div><div class="approved-card approved-panel"><h3>Situação financeira</h3><div class="approved-chart"><canvas id="graficoTopClientes"></canvas></div></div></div>
-              <div class="approved-bottom"><div class="approved-card approved-panel"><div class="flex justify-between"><h3>Próximos vencimentos</h3><button onclick="switchTab('financeiroTab')" class="text-blue-600 text-xs">Ver todos</button></div><div id="alertasContainer" class="text-xs"><p class="text-slate-500 py-3">Nenhum vencimento ou pendência para hoje.</p></div></div><div class="approved-card approved-panel"><div class="flex justify-between"><h3>Pedidos recentes</h3><button onclick="switchTab('vendasTab')" class="text-blue-600 text-xs">Ver todos</button></div><table class="approved-table"><thead><tr><th>Pedido</th><th>Cliente</th><th>Valor</th><th>Situação</th></tr></thead><tbody id="dashboardPedidosRecentes"><tr><td colspan="4" class="text-slate-500">Os pedidos recentes aparecerão aqui.</td></tr></tbody></table></div></div>
+              <div class="panel-grid">
+                <div class="totre-card dashboard-panel"><div class="panel-title"><span>Evolução das vendas</span><select class="border border-slate-200 rounded-lg px-3 py-2 text-xs"><option>Diária</option><option>Semanal</option></select></div><div class="chart-wrap"><canvas id="graficoFaturamento"></canvas></div></div>
+                <div class="totre-card dashboard-panel"><div class="panel-title">Situação financeira</div><div class="chart-wrap"><canvas id="graficoTopClientes"></canvas></div></div>
+              </div>
+              <div class="lower-grid">
+                <div class="totre-card data-panel"><div class="panel-title"><span>Próximos vencimentos</span><button onclick="switchTab('financeiroTab')" class="text-blue-600 text-xs">Ver todos</button></div><div class="modern-table-wrap"><table><thead><tr><th>Descrição</th><th>Vencimento</th><th>Valor</th><th>Situação</th></tr></thead><tbody id="dashVencimentosBody"><tr><td colspan="4">Sem registros</td></tr></tbody></table></div></div>
+                <div class="totre-card data-panel"><div class="panel-title"><span>Pedidos recentes</span><button onclick="switchTab('vendasTab')" class="text-blue-600 text-xs">Ver todos</button></div><div class="modern-table-wrap"><table><thead><tr><th>Pedido</th><th>Cliente</th><th>Data</th><th>Valor</th><th>Status</th></tr></thead><tbody id="dashPedidosBody"><tr><td colspan="5">Sem registros</td></tr></tbody></table></div></div>
+              </div>
+              <div id="alertasContainer" class="hidden"></div>
             </section>
-
 
             <!-- CADASTROS TAB -->
             <section id="cadastrosTab" class="tab-content space-y-4">
-                <div class="flex justify-between items-center bg-slate-900 border border-slate-800 p-4 rounded-xl shadow">
-                    <div>
-                        <h2 class="text-sm font-black text-white flex items-center gap-2">
-                            <i class="fa-solid fa-users text-indigo-400"></i> Cadastros / Clientes
-                        </h2>
-                        <p class="text-[10px] text-slate-400 mt-0.5">Gerencie seus clientes, visualize status e histórico financeiro</p>
-                    </div>
-                    <button onclick="abrirModalCliente()" class="bg-sky-600 hover:bg-sky-500 text-white font-bold px-4 py-2 rounded-xl text-xs transition flex items-center gap-2 shadow">
-                        <i class="fa-solid fa-user-plus"></i> + Novo Cliente
-                    </button>
-                </div>
-
-                <div class="flex flex-wrap items-center justify-between gap-3 bg-slate-900 border border-slate-800 p-3 rounded-xl">
-                    <div class="relative flex-1 min-w-[240px]">
-                        <i class="fa-solid fa-magnifying-glass absolute left-3 top-3 text-slate-400 text-xs"></i>
-                        <input type="text" id="buscaPessoasInput" oninput="updateUI()" placeholder="Buscar cliente, nome, cidade..." class="w-full bg-slate-800 border border-slate-700 text-white text-xs rounded-xl pl-9 pr-3 py-2 focus:outline-none focus:border-sky-500">
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 items-start">
-                    <div class="lg:col-span-8 bg-slate-900 border border-slate-800 rounded-xl shadow overflow-hidden flex flex-col h-[calc(100vh-280px)] min-h-[400px]">
-                        <div class="overflow-y-auto flex-1">
-                            <table class="w-full text-left text-xs border-collapse">
-                                <thead class="bg-slate-800/90 text-slate-400 uppercase text-[9px] sticky top-0 z-10 border-b border-slate-700">
-                                    <tr>
-                                        <th class="p-3">CÓDIGO</th>
-                                        <th class="p-3">CLIENTE</th>
-                                        <th class="p-3">CIDADE</th>
-                                        <th class="p-3">TELEFONE</th>
-                                        <th class="p-3 text-center">STATUS</th>
-                                        <th class="p-3 text-center">AÇÕES</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="listaPessoasTabela" class="divide-y divide-slate-800/60"></tbody>
-                            </table>
-                        </div>
-                    </div>
-
-                    <div class="lg:col-span-4 bg-slate-900 border border-slate-800 p-4 rounded-xl space-y-4 shadow flex flex-col justify-between h-[calc(100vh-280px)] min-h-[400px]">
-                        <div id="painelResumoCliente" class="space-y-4 overflow-y-auto pr-1">
-                            <div>
-                                <span class="text-[9px] font-bold text-slate-400 uppercase tracking-widest block mb-1">Resumo do Cliente</span>
-                                <h3 id="resumoNome" class="text-sm font-extrabold text-white">Selecione um cliente</h3>
-                                <p id="resumoCnpj" class="text-[10px] text-slate-400 mt-0.5">CNPJ: --</p>
-                                <p id="resumoFone" class="text-[10px] text-slate-400">--</p>
-                                <p id="resumoEmail" class="text-[10px] text-sky-400 truncate">--</p>
-                            </div>
-
-                            <div class="border-t border-slate-800 pt-3 space-y-3">
-                                <div>
-                                    <span class="text-[10px] text-slate-400 block">Compras (Mês)</span>
-                                    <span id="resumoComprasMes" class="text-base font-black text-sky-400">R$ 0,00</span>
-                                </div>
-                                <div>
-                                    <span class="text-[10px] text-slate-400 block">Saldo a Receber</span>
-                                    <span id="resumoSaldoReceber" class="text-base font-black text-emerald-400">R$ 0,00</span>
-                                </div>
-                                <div>
-                                    <span class="text-[10px] text-slate-400 block">Última Compra</span>
-                                    <span id="resumoUltimaCompra" class="text-xs font-bold text-slate-200">--</span>
-                                </div>
-                            </div>
-                </div>
+              <div class="totre-page-head"><div><h2>Clientes e fornecedores</h2><p>Gerencie seus cadastros e acompanhe o histórico comercial e financeiro.</p></div></div>
+              <div class="totre-card toolbar"><div class="search"><i class="fa-solid fa-magnifying-glass"></i><input id="buscaPessoasInput" oninput="updateUI()" placeholder="Buscar por nome, CNPJ ou e-mail..."></div><button class="btn-outline">Todos</button><button class="btn-outline">Clientes</button><button class="btn-outline">Fornecedores</button><button onclick="loadData()" class="btn-outline"><i class="fa-solid fa-rotate"></i>Atualizar</button><button onclick="abrirModalCliente()" class="btn-primary"><i class="fa-solid fa-circle-plus"></i>Novo cadastro</button></div>
+              <div class="totre-card module-layout">
+                <div class="module-main modern-table-wrap"><table class="modern-table"><thead><tr><th>Nome / Razão social</th><th>Tipo</th><th>CNPJ / CPF</th><th>E-mail</th><th>Telefone</th><th>Situação</th><th>Ações</th></tr></thead><tbody id="listaPessoasTabela"></tbody></table></div>
+                <aside class="module-side"><div id="painelResumoCliente"><div class="flex justify-between items-center border-b pb-3"><h3 class="text-lg font-extrabold">Resumo do cadastro</h3><button class="text-xl" onclick="clienteSelecionadoId=null;renderizarDetalhesClienteSelecionado()">×</button></div><div class="py-5"><h3 id="resumoNome" class="text-xl font-extrabold">Selecione um cliente</h3><p id="resumoCnpj" class="text-slate-500 mt-2">CNPJ: --</p><p id="resumoFone" class="text-slate-500 mt-1">--</p><p id="resumoEmail" class="text-blue-600 mt-1">--</p></div><div class="summary-box"><div class="grid grid-cols-2 gap-4"><div><span class="text-xs text-slate-500">Total em pedidos</span><strong id="resumoComprasMes" class="block text-lg">R$ 0,00</strong></div><div><span class="text-xs text-slate-500">Saldo a receber</span><strong id="resumoSaldoReceber" class="block text-lg text-red-500">R$ 0,00</strong></div></div></div><button onclick="abrirModalVenda()" class="btn-primary w-full mt-5"><i class="fa-solid fa-circle-plus"></i>Novo pedido para este cliente</button></div></aside>
+              </div>
             </section>
 
             <!-- VENDAS TAB -->
             <section id="vendasTab" class="tab-content space-y-4">
-                <div class="flex justify-between items-center bg-slate-900 border border-slate-800 p-4 rounded-xl shadow">
-                    <div>
-                        <h2 class="text-sm font-black text-white flex items-center gap-2">
-                            <i class="fa-solid fa-cart-shopping text-emerald-400"></i> Vendas / Pedidos
-                        </h2>
-                        <p class="text-[10px] text-slate-400 mt-0.5">Gerencie seus pedidos de venda, orçamentos e faturamento</p>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <button onclick="faturarPedidosSelecionados()" id="btnFaturarMultiplo" class="hidden bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold px-3 py-2 rounded-xl transition items-center gap-1.5 shadow">
-                            <i class="fa-solid fa-layer-group"></i> Faturar Selecionados (<span id="countSelecionados">0</span>)
-                        </button>
-                        <button onclick="abrirModalVenda()" class="bg-sky-600 hover:bg-sky-500 text-white font-bold px-4 py-2 rounded-xl text-xs transition flex items-center gap-2 shadow">
-                            <i class="fa-solid fa-plus"></i> + Novo Pedido
-                        </button>
-                    </div>
-                </div>
-
-                <div class="flex flex-wrap items-center justify-between gap-3 bg-slate-900 border border-slate-800 p-3 rounded-xl">
-                    <div class="relative flex-1 min-w-[240px]">
-                        <i class="fa-solid fa-magnifying-glass absolute left-3 top-3 text-slate-400 text-xs"></i>
-                        <input type="text" id="buscaVendasInput" oninput="updateUI()" placeholder="Buscar pedido, cliente..." class="w-full bg-slate-800 border border-slate-700 text-white text-xs rounded-xl pl-9 pr-3 py-2 focus:outline-none focus:border-sky-500">
-                    </div>
-                </div>
-
-                <div class="bg-slate-900 border border-slate-800 rounded-xl shadow overflow-hidden flex flex-col h-[calc(100vh-280px)] min-h-[400px]">
-                    <div class="overflow-y-auto flex-1">
-                        <table class="w-full text-left text-xs border-collapse">
-                            <thead class="bg-slate-800/90 text-slate-400 uppercase text-[9px] sticky top-0 z-10 border-b border-slate-700">
-                                <tr>
-                                    <th class="p-3 w-10 text-center">#</th>
-                                    <th class="p-3">PEDIDO ID</th>
-                                    <th class="p-3">DATA</th>
-                                    <th class="p-3">CLIENTE</th>
-                                    <th class="p-3">VALOR</th>
-                                    <th class="p-3 text-center">STATUS</th>
-                                    <th class="p-3 text-center">AÇÕES</th>
-                                </tr>
-                            </thead>
-                            <tbody id="listaVendasTabela" class="divide-y divide-slate-800/60"></tbody>
-                        </table>
-                    </div>
-                </div>
+              <div class="totre-page-head"><div><h2>Pedidos e vendas</h2><p>Gerencie pedidos, orçamentos e vendas da sua empresa.</p></div></div>
+              <div class="totre-card toolbar"><div class="search"><i class="fa-solid fa-magnifying-glass"></i><input id="buscaVendasInput" oninput="updateUI()" placeholder="Buscar pedidos, clientes ou itens..."></div><button class="btn-outline"><i class="fa-solid fa-filter"></i>Filtros</button><button id="btnFaturarMultiplo" onclick="faturarPedidosSelecionados()" class="btn-outline hidden"><i class="fa-solid fa-layer-group"></i>Faturar selecionados (<span id="countSelecionados">0</span>)</button><button onclick="abrirModalVenda()" class="btn-primary"><i class="fa-solid fa-plus"></i>Novo pedido</button></div>
+              <div class="section-tabs"><button class="active">Todos</button><button>Orçamentos</button><button>Faturados</button></div>
+              <div class="totre-card module-layout">
+                <div class="module-main modern-table-wrap"><table class="modern-table"><thead><tr><th style="width:38px">#</th><th>Nº do pedido</th><th>Data</th><th>Cliente</th><th>Status</th><th>Total</th><th>Ações</th></tr></thead><tbody id="listaVendasTabela"></tbody></table></div>
+                <aside class="module-side"><div class="flex justify-between items-center border-b pb-3"><h3 class="text-lg font-extrabold">Detalhes do pedido</h3><button class="text-xl">×</button></div><div id="pedidoDetalhePainel" class="py-5"><p class="text-slate-500">Selecione um pedido para ver os detalhes.</p></div></aside>
+              </div>
             </section>
 
-            <!-- FINANCEIRO TAB (LAYOUT COMPLETO DEFINITIVO) -->
+            <!-- FINANCEIRO TAB -->
             <section id="financeiroTab" class="tab-content space-y-4">
-                
-                <!-- Cabeçalho -->
-                <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl shadow flex justify-between items-center">
-                    <div>
-                        <h2 class="text-sm font-black text-white flex items-center gap-2">
-                            <i class="fa-solid fa-file-invoice-dollar text-sky-400"></i> Contas a Pagar / Receber
-                        </h2>
-                        <p class="text-[10px] text-slate-400 mt-0.5">Gestão financeira completa com integração ao Supabase</p>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <span class="text-[10px] bg-slate-800 border border-slate-700 text-slate-300 px-3 py-1.5 rounded-lg font-mono">01/07/2026 - 31/07/2026</span>
-                    </div>
-                </div>
-
-                <!-- 1. Cards Superiores -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-                    <div class="bg-slate-900 border border-slate-800 p-3.5 rounded-xl shadow flex items-center justify-between">
-                        <div>
-                            <span class="text-[9px] font-bold text-slate-400 uppercase tracking-wider block mb-0.5">A Receber Hoje</span>
-                            <span id="finCardAReceber" class="text-base font-extrabold text-emerald-400">R$ 0,00</span>
-                            <span class="text-[9px] text-emerald-500 block mt-0.5">+12% em relação ao mês anterior</span>
-                        </div>
-                        <div class="bg-emerald-500/10 p-2.5 rounded-lg text-emerald-400 text-sm"><i class="fa-solid fa-wallet"></i></div>
-                    </div>
-
-                    <div class="bg-slate-900 border border-slate-800 p-3.5 rounded-xl shadow flex items-center justify-between">
-                        <div>
-                            <span class="text-[9px] font-bold text-slate-400 uppercase tracking-wider block mb-0.5">A Pagar Hoje</span>
-                            <span id="finCardAPagar" class="text-base font-extrabold text-rose-400">R$ 0,00</span>
-                            <span class="text-[9px] text-rose-500 block mt-0.5">+8% em relação ao mês anterior</span>
-                        </div>
-                        <div class="bg-rose-500/10 p-2.5 rounded-lg text-rose-400 text-sm"><i class="fa-solid fa-credit-card"></i></div>
-                    </div>
-
-                    <div class="bg-slate-900 border border-slate-800 p-3.5 rounded-xl shadow flex items-center justify-between">
-                        <div>
-                            <span class="text-[9px] font-bold text-slate-400 uppercase tracking-wider block mb-0.5">Vencidas</span>
-                            <span id="finCardVencidas" class="text-base font-extrabold text-amber-400">R$ 0,00</span>
-                            <span class="text-[9px] text-amber-500 block mt-0.5" id="finQtdVencidas">0 títulos vencidos</span>
-                        </div>
-                        <div class="bg-amber-500/10 p-2.5 rounded-lg text-amber-400 text-sm"><i class="fa-solid fa-triangle-exclamation"></i></div>
-                    </div>
-
-                    <div class="bg-slate-900 border border-slate-800 p-3.5 rounded-xl shadow flex items-center justify-between">
-                        <div>
-                            <span class="text-[9px] font-bold text-slate-400 uppercase tracking-wider block mb-0.5">Saldo Previsto</span>
-                            <span id="finCardSaldoPrevisto" class="text-base font-extrabold text-sky-400">R$ 0,00</span>
-                            <span class="text-[9px] text-slate-500 block mt-0.5">Saldo para o período</span>
-                        </div>
-                        <div class="bg-sky-500/10 p-2.5 rounded-lg text-sky-400 text-sm"><i class="fa-solid fa-chart-line"></i></div>
-                    </div>
-                </div>
-
-                <!-- 2. Tabelas em Tela Cheia (Contas a Receber e Contas a Pagar) -->
-                <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 space-y-3 shadow">
-                    <div class="flex justify-between items-center border-b border-slate-800 pb-2">
-                        <h3 class="text-xs font-bold text-emerald-400 uppercase flex items-center gap-1.5"><i class="fa-solid fa-arrow-down-left"></i> Contas a Receber</h3>
-                    </div>
-                    <div class="overflow-x-auto">
-                        <table class="w-full text-left text-xs">
-                            <thead class="bg-slate-800/80 text-slate-400 text-[9px] uppercase">
-                                <tr>
-                                    <th class="p-2.5">Nº</th>
-                                    <th class="p-2.5">Cliente</th>
-                                    <th class="p-2.5">Vencimento</th>
-                                    <th class="p-2.5">Valor</th>
-                                    <th class="p-2.5">Saldo</th>
-                                    <th class="p-2.5 text-center">Status</th>
-                                    <th class="p-2.5 text-center">Ações</th>
-                                </tr>
-                            </thead>
-                            <tbody id="tabelaContasReceber" class="divide-y divide-slate-800/60"></tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 space-y-3 shadow">
-                    <div class="flex justify-between items-center border-b border-slate-800 pb-2">
-                        <h3 class="text-xs font-bold text-rose-400 uppercase flex items-center gap-1.5"><i class="fa-solid fa-arrow-up-right"></i> Contas a Pagar</h3>
-                    </div>
-                    <div class="overflow-x-auto">
-                        <table class="w-full text-left text-xs">
-                            <thead class="bg-slate-800/80 text-slate-400 text-[9px] uppercase">
-                                <tr>
-                                    <th class="p-2.5">Nº</th>
-                                    <th class="p-2.5">Fornecedor</th>
-                                    <th class="p-2.5">Vencimento</th>
-                                    <th class="p-2.5">Valor</th>
-                                    <th class="p-2.5">Saldo</th>
-                                    <th class="p-2.5 text-center">Status</th>
-                                    <th class="p-2.5 text-center">Ações</th>
-                                </tr>
-                            </thead>
-                            <tbody id="tabelaContasPagar" class="divide-y divide-slate-800/60"></tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <!-- 3. Rodapé com 3 Ações Rápidas Proporcionais -->
-                <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl shadow space-y-2">
-                    <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Ações Rápidas</span>
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                        <button onclick="abrirModalLancamentoUnico()" class="bg-slate-800 hover:bg-slate-700/80 border border-slate-700 p-3 rounded-xl flex items-center justify-center gap-2 text-xs font-bold text-white transition shadow">
-                            <i class="fa-solid fa-circle-plus text-emerald-400 text-sm"></i> Novo Lançamento (Receber / Pagar)
-                        </button>
-                        <button onclick="abrirModalImportacaoXmlPdf()" class="bg-slate-800 hover:bg-slate-700/80 border border-slate-700 p-3 rounded-xl flex items-center justify-center gap-2 text-xs font-bold text-white transition shadow">
-                            <i class="fa-solid fa-file-arrow-up text-sky-400 text-sm"></i> Importar Nota Fiscal (PDF / XML)
-                        </button>
-                        <button onclick="switchTab('fluxoCaixaTab')" class="bg-slate-800 hover:bg-slate-700/80 border border-slate-700 p-3 rounded-xl flex items-center justify-center gap-2 text-xs font-bold text-white transition shadow">
-                            <i class="fa-solid fa-chart-line text-amber-400 text-sm"></i> Fluxo de Caixa
-                        </button>
-                    </div>
-                </div>
+              <div class="totre-page-head"><div><h2>Financeiro</h2><p>Controle suas contas a pagar e receber.</p></div><div class="head-actions"><div class="top-icon"><i class="fa-regular fa-circle-question"></i></div><div class="top-icon"><i class="fa-regular fa-bell"></i><b>1</b></div></div></div>
+              <div class="metric-grid">
+                <div class="totre-card metric-card"><div class="metric-icon metric-green"><i class="fa-solid fa-arrow-trend-up"></i></div><div><div class="label">A receber</div><div id="finCardAReceber" class="value">R$ 0,00</div></div></div>
+                <div class="totre-card metric-card"><div class="metric-icon metric-red"><i class="fa-solid fa-arrow-down"></i></div><div><div class="label">A pagar</div><div id="finCardAPagar" class="value">R$ 0,00</div></div></div>
+                <div class="totre-card metric-card"><div class="metric-icon metric-orange"><i class="fa-regular fa-clock"></i></div><div><div class="label">Vencido</div><div id="finCardVencidas" class="value">R$ 0,00</div><span id="finQtdVencidas" class="text-xs text-slate-500">0 títulos vencidos</span></div></div>
+                <div class="totre-card metric-card"><div class="metric-icon metric-blue"><i class="fa-solid fa-wallet"></i></div><div><div class="label">Saldo previsto</div><div id="finCardSaldoPrevisto" class="value">R$ 0,00</div></div></div>
+              </div>
+              <div class="section-tabs"><button class="active">Contas a receber</button><button>Contas a pagar</button></div>
+              <div class="totre-card toolbar"><div class="search"><i class="fa-solid fa-magnifying-glass"></i><input placeholder="Buscar pessoa, documento ou descrição"></div><select><option>Situação</option></select><input type="date"><button onclick="abrirModalImportacaoXmlPdf()" class="btn-outline"><i class="fa-solid fa-upload"></i>Importar nota</button><button onclick="abrirModalLancamentoUnico()" class="btn-primary"><i class="fa-solid fa-circle-plus"></i>Novo lançamento</button></div>
+              <div class="totre-card module-layout">
+                <div class="module-main p-0"><div class="modern-table-wrap"><table class="modern-table"><thead><tr><th>Documento</th><th>Cliente / Fornecedor</th><th>Vencimento</th><th>Valor</th><th>Saldo</th><th>Status</th><th>Ações</th></tr></thead><tbody id="tabelaContasReceber"></tbody><tbody id="tabelaContasPagar"></tbody></table></div></div>
+                <aside class="module-side"><div class="flex justify-between items-center border-b pb-3"><h3 class="text-lg font-extrabold">Detalhes do título</h3><button class="text-xl">×</button></div><div id="financeiroDetalhePainel" class="py-5"><p class="text-slate-500">Selecione um título para visualizar valores, origem e anexos.</p></div><button class="btn-primary w-full mt-4" onclick="abrirModalLancamentoUnico()"><i class="fa-solid fa-check"></i>Dar baixa</button></aside>
+              </div>
             </section>
 
             <!-- MODAL ÚNICO: NOVO LANÇAMENTO (COM ABAS) -->
@@ -697,94 +590,24 @@
             </div>
             <!-- RELATÓRIOS TAB -->
             <section id="relatoriosTab" class="tab-content space-y-4">
-                <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl space-y-4 shadow">
-                    <h2 class="text-xs font-bold text-sky-400 flex items-center gap-1.5">
-                        <i class="fa-solid fa-chart-pie"></i> Relatório Geral
-                    </h2>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-                        <div class="bg-slate-800/60 p-3 rounded-lg border border-slate-700">
-                            <span class="text-[10px] text-slate-400 block mb-0.5">Faturamento Total em Vendas Faturadas</span>
-                            <span id="relTotalVendas" class="text-lg font-bold text-white">R$ 0,00</span>
-                        </div>
-                        <div class="bg-slate-800/60 p-3 rounded-lg border border-slate-700">
-                            <span class="text-[10px] text-slate-400 block mb-0.5">Total de Contas Pendentes/Atraso</span>
-                            <span id="relTotalAtraso" class="text-lg font-bold text-rose-400">R$ 0,00</span>
-                        </div>
-                    </div>
-                </div>
+              <div class="totre-page-head"><div><h2>Relatórios</h2><p>Acompanhe e analise os dados da sua empresa.</p></div><div class="period-box"><span>Regime de caixa / competência</span><input type="checkbox" checked></div></div>
+              <div class="report-nav"><button class="active" onclick="showReport('vendas',this)"><i class="fa-solid fa-cart-shopping mr-2"></i>Vendas</button><button onclick="showReport('financeiro',this)"><i class="fa-solid fa-circle-dollar-to-slot mr-2"></i>Financeiro</button><button onclick="showReport('clientes',this)"><i class="fa-solid fa-users mr-2"></i>Clientes</button><button onclick="showReport('produtos',this)"><i class="fa-solid fa-box mr-2"></i>Produtos e serviços</button></div>
+              <div class="totre-card toolbar"><input type="date"><input type="date"><select><option>Todos os status</option></select><select><option>Todas as pessoas</option></select><button class="btn-primary"><i class="fa-solid fa-filter"></i>Aplicar filtros</button><button class="btn-outline"><i class="fa-regular fa-file-pdf"></i>Exportar PDF</button><button class="btn-outline"><i class="fa-regular fa-file-excel"></i>Exportar Excel</button></div>
+              <div id="reportView-vendas" class="report-view"><div class="report-kpis"><div class="totre-card metric-card"><div class="metric-icon metric-blue"><i class="fa-solid fa-sack-dollar"></i></div><div><div class="label">Total vendido</div><div id="relTotalVendas" class="value">R$ 0,00</div></div></div><div class="totre-card metric-card"><div class="metric-icon metric-green"><i class="fa-solid fa-cart-shopping"></i></div><div><div class="label">Ticket médio</div><div id="relTicketMedio" class="value">R$ 0,00</div></div></div><div class="totre-card metric-card"><div class="metric-icon metric-purple"><i class="fa-solid fa-clipboard-list"></i></div><div><div class="label">Pedidos</div><div id="relQtdPedidos" class="value">0</div></div></div><div class="totre-card metric-card"><div class="metric-icon metric-orange"><i class="fa-solid fa-users"></i></div><div><div class="label">Clientes ativos</div><div id="relQtdClientes" class="value">0</div></div></div></div><div class="report-chart-grid mt-3"><div class="totre-card dashboard-panel"><div class="panel-title">Vendas por período</div><div class="chart-wrap"><canvas id="reportChart1"></canvas></div></div><div class="totre-card dashboard-panel"><div class="panel-title">Pedidos por status</div><div class="chart-wrap"><canvas id="reportChart2"></canvas></div></div><div class="totre-card dashboard-panel"><div class="panel-title">Clientes que mais compraram</div><div class="chart-wrap"><canvas id="reportChart3"></canvas></div></div></div><div class="totre-card data-panel mt-3"><div class="panel-title">Resumo de vendas</div><div class="modern-table-wrap"><table class="modern-table"><thead><tr><th>Cliente</th><th>Pedido</th><th>Data</th><th>Total</th><th>Status</th></tr></thead><tbody id="reportTableBody"></tbody></table></div></div></div>
+              <div id="reportView-financeiro" class="report-view hidden"><div class="report-kpis"><div class="totre-card metric-card"><div class="metric-icon metric-green"><i class="fa-solid fa-arrow-down"></i></div><div><div class="label">Recebido</div><div id="relRecebido" class="value">R$ 0,00</div></div></div><div class="totre-card metric-card"><div class="metric-icon metric-red"><i class="fa-solid fa-arrow-up"></i></div><div><div class="label">Pago</div><div id="relPago" class="value">R$ 0,00</div></div></div><div class="totre-card metric-card"><div class="metric-icon metric-orange"><i class="fa-regular fa-clock"></i></div><div><div class="label">Em aberto</div><div id="relTotalAtraso" class="value">R$ 0,00</div></div></div><div class="totre-card metric-card"><div class="metric-icon metric-purple"><i class="fa-solid fa-percent"></i></div><div><div class="label">Inadimplência</div><div class="value">0,0%</div></div></div></div></div>
+              <div id="reportView-clientes" class="report-view hidden"><div class="report-kpis"><div class="totre-card metric-card"><div class="metric-icon metric-green"><i class="fa-solid fa-user-plus"></i></div><div><div class="label">Novos clientes</div><div class="value" id="relNovosClientes">0</div></div></div><div class="totre-card metric-card"><div class="metric-icon metric-blue"><i class="fa-solid fa-users"></i></div><div><div class="label">Clientes ativos</div><div class="value" id="relClientesAtivos">0</div></div></div></div></div>
+              <div id="reportView-produtos" class="report-view hidden"><div class="report-kpis"><div class="totre-card metric-card"><div class="metric-icon metric-blue"><i class="fa-solid fa-box"></i></div><div><div class="label">Itens vendidos</div><div class="value" id="relItensVendidos">0</div></div></div><div class="totre-card metric-card"><div class="metric-icon metric-green"><i class="fa-solid fa-sack-dollar"></i></div><div><div class="label">Faturamento</div><div class="value" id="relFaturamentoProdutos">R$ 0,00</div></div></div></div></div>
             </section>
 
             <!-- CONFIGURAÇÕES TAB -->
             <section id="configuracoesTab" class="tab-content space-y-4">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-                    <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl space-y-3 shadow">
-                        <h2 class="text-xs font-bold text-sky-400 flex items-center gap-1.5 border-b border-slate-800 pb-2">
-                            <i class="fa-solid fa-building"></i> Dados da Empresa (Aparecem no Pedido)
-                        </h2>
-                        <form id="empresaForm" onsubmit="salvarDadosEmpresa(event)" class="space-y-2.5">
-                            <div>
-                                <label class="block text-[10px] text-slate-400 mb-0.5">Razão Social / Nome Fantasia</label>
-                                <input type="text" id="empRazao" placeholder="Ex: TORNEADORA TREVISAN LTDA" class="w-full bg-slate-800 border border-slate-700 text-white text-[10px] rounded-lg p-2" required>
-                            </div>
-                            <div class="grid grid-cols-2 gap-2">
-                                <div>
-                                    <label class="block text-[10px] text-slate-400 mb-0.5">CNPJ</label>
-                                    <input type="text" id="empCnpj" placeholder="60.476.821/0001-20" class="w-full bg-slate-800 border border-slate-700 text-white text-[10px] rounded-lg p-2">
-                                </div>
-                                <div>
-                                    <label class="block text-[10px] text-slate-400 mb-0.5">Telefone / WhatsApp</label>
-                                    <input type="text" id="empTel" placeholder="(69) 98442-7341" class="w-full bg-slate-800 border border-slate-700 text-white text-[10px] rounded-lg p-2">
-                                </div>
-                            </div>
-                            <div>
-                                <label class="block text-[10px] text-slate-400 mb-0.5">Endereço da Empresa</label>
-                                <input type="text" id="empEnd" placeholder="RUA BOTO, 2116 - ARIQUEMES/RO" class="w-full bg-slate-800 border border-slate-700 text-white text-[10px] rounded-lg p-2">
-                            </div>
-                            <button type="submit" class="bg-sky-600 hover:bg-sky-500 text-white font-bold py-2 rounded-lg text-[10px] w-full transition">Salvar Dados da Empresa</button>
-                        </form>
-                    </div>
-
-                    <div class="space-y-4">
-                        <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl space-y-3 shadow">
-                            <h2 class="text-xs font-bold text-sky-400 flex items-center gap-1.5 border-b border-slate-800 pb-2">
-                                <i class="fa-solid fa-building-columns"></i> Cadastrar Contas Bancárias / Caixa Físico
-                            </h2>
-                            <form onsubmit="salvarContaBancaria(event)" class="flex gap-2">
-                                <input type="text" id="novaContaBancariaInput" placeholder="Ex: BANCO DO BRASIL, CAIXA FISICA" class="flex-1 bg-slate-800 border border-slate-700 text-white text-[10px] rounded-lg p-2" required>
-                                <button type="submit" class="bg-sky-600 hover:bg-sky-500 text-white font-bold px-3 rounded-lg text-[10px] transition">Adicionar</button>
-                            </form>
-                            <div id="listaContasBancarias" class="space-y-1 max-h-28 overflow-y-auto"></div>
-                        </div>
-
-                        <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl space-y-3 shadow">
-                            <h2 class="text-xs font-bold text-sky-400 flex items-center gap-1.5 border-b border-slate-800 pb-2">
-                                <i class="fa-solid fa-credit-card"></i> Cadastrar Condições de Pagamento
-                            </h2>
-                            <form onsubmit="salvarCondicaoPgto(event)" class="flex gap-2">
-                                <input type="text" id="novaCondicaoInput" placeholder="Ex: BOLETO 10 DIAS, 30 DIAS" class="flex-1 bg-slate-800 border border-slate-700 text-white text-[10px] rounded-lg p-2" required>
-                                <button type="submit" class="bg-sky-600 hover:bg-sky-500 text-white font-bold px-3 rounded-lg text-[10px] transition">Adicionar</button>
-                            </form>
-                            <div id="listaCondicoesPgto" class="space-y-1 max-h-28 overflow-y-auto"></div>
-                        </div>
-
-                        <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl space-y-3 shadow">
-                            <h2 class="text-xs font-bold text-sky-400 flex items-center gap-1.5 border-b border-slate-800 pb-2">
-                                <i class="fa-solid fa-sliders"></i> Chave PIX & WhatsApp
-                            </h2>
-                            <form onsubmit="salvarConfigsGerais(event)" class="space-y-2.5">
-                                <div>
-                                    <label class="block text-[10px] text-slate-400 mb-0.5">Chave PIX Oficial</label>
-                                    <input type="text" id="configPix" placeholder="Chave PIX da oficina" class="w-full bg-slate-800 border border-slate-700 text-white text-[10px] rounded-lg p-2">
-                                </div>
-                                <div>
-                                    <label class="block text-[10px] text-slate-400 mb-0.5">Mensagem de Cobrança WhatsApp</label>
-                                    <textarea id="configMsgCobranca" rows="2" class="w-full bg-slate-800 border border-slate-700 text-white text-[10px] rounded-lg p-2">Olá {cliente}, identificamos um valor pendente de R$ {valor} referente a {descricao}. Segue nossa chave PIX para pagamento: {pix}</textarea>
-                                </div>
-                                <button type="submit" class="bg-sky-600 hover:bg-sky-500 text-white font-bold py-2 rounded-lg text-[10px] w-full transition">Salvar Parâmetros PIX</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+              <div class="totre-page-head"><div><h2>Configurações</h2><p>Personalize o sistema conforme as necessidades da sua empresa.</p></div></div>
+              <div class="config-nav"><button class="active" onclick="showConfig('empresa',this)"><i class="fa-regular fa-building mr-2"></i>Empresa</button><button onclick="showConfig('usuarios',this)"><i class="fa-solid fa-users mr-2"></i>Usuários e permissões</button><button onclick="showConfig('parametros',this)"><i class="fa-solid fa-sliders mr-2"></i>Parâmetros</button><button onclick="showConfig('integracoes',this)"><i class="fa-solid fa-puzzle-piece mr-2"></i>Integrações</button><button onclick="showConfig('seguranca',this)"><i class="fa-solid fa-shield-halved mr-2"></i>Segurança</button></div>
+              <div id="configView-empresa" class="config-view config-grid"><div class="totre-card config-menu"><button class="active"><i class="fa-regular fa-building"></i>Dados da empresa</button><button onclick="showConfig('usuarios')"><i class="fa-solid fa-users"></i>Usuários e permissões</button><button onclick="showConfig('parametros')"><i class="fa-regular fa-credit-card"></i>Formas de pagamento</button><button onclick="showConfig('integracoes')"><i class="fa-solid fa-puzzle-piece"></i>Integrações</button></div><div class="totre-card settings-form"><h3 class="text-lg font-extrabold mb-4">Dados da empresa</h3><form id="empresaForm" onsubmit="salvarDadosEmpresa(event)" class="grid grid-cols-1 md:grid-cols-2 gap-4"><div class="md:col-span-2"><label class="block font-bold mb-1">Logo da empresa</label><div class="border border-dashed rounded-lg p-4 flex items-center gap-4"><img src="totre-logo.png" class="w-32"><span class="text-slate-500">Logo oficial TOTRE</span></div></div><div><label class="block font-bold mb-1">Razão social</label><input id="empRazao" class="w-full rounded-lg p-2" required></div><div><label class="block font-bold mb-1">Nome fantasia</label><input id="empFantasia" class="w-full rounded-lg p-2"></div><div><label class="block font-bold mb-1">CNPJ</label><input id="empCnpj" class="w-full rounded-lg p-2"></div><div><label class="block font-bold mb-1">Telefone / WhatsApp</label><input id="empTel" class="w-full rounded-lg p-2"></div><div class="md:col-span-2"><label class="block font-bold mb-1">Endereço</label><input id="empEnd" class="w-full rounded-lg p-2"></div><div class="md:col-span-2 flex justify-end"><button class="btn-primary" type="submit"><i class="fa-solid fa-floppy-disk"></i>Salvar configurações</button></div></form></div><div class="totre-card settings-preview"><h3 class="text-lg font-extrabold mb-5">Pré-visualização da empresa</h3><div class="border rounded-lg p-7"><img src="totre-logo.png" class="w-56 mb-6"><hr class="border-blue-500 mb-6"><h4 id="previewEmpresaNome" class="font-extrabold text-lg">TOTRE</h4><p id="previewEmpresaCnpj" class="text-slate-500 mt-3">CNPJ: --</p><p id="previewEmpresaContato" class="text-slate-500 mt-3">--</p></div></div></div>
+              <div id="configView-usuarios" class="config-view hidden"><div class="grid grid-cols-1 xl:grid-cols-2 gap-4"><div class="totre-card p-4"><div class="flex justify-between mb-4"><h3 class="text-lg font-extrabold">Usuários</h3><button class="btn-primary"><i class="fa-solid fa-plus"></i>Novo usuário</button></div><table class="modern-table"><thead><tr><th>Nome</th><th>E-mail</th><th>Perfil</th><th>Status</th><th>Ações</th></tr></thead><tbody><tr><td>Administrador</td><td>admin@totre.com.br</td><td><span class="badge badge-blue">Administrador</span></td><td><span class="badge badge-green">Ativo</span></td><td><i class="fa-solid fa-pen text-blue-600"></i></td></tr></tbody></table></div><div class="totre-card p-5"><h3 class="text-lg font-extrabold mb-4">Permissões do usuário</h3><table class="modern-table"><thead><tr><th>Módulo</th><th>Consultar</th><th>Incluir</th><th>Editar</th><th>Excluir</th></tr></thead><tbody id="permissoesTabela"><tr><td>Visão geral</td><td><input type="checkbox" checked></td><td><input type="checkbox" checked></td><td><input type="checkbox" checked></td><td><input type="checkbox" checked></td></tr><tr><td>Pedidos e vendas</td><td><input type="checkbox" checked></td><td><input type="checkbox" checked></td><td><input type="checkbox" checked></td><td><input type="checkbox" checked></td></tr><tr><td>Financeiro</td><td><input type="checkbox" checked></td><td><input type="checkbox" checked></td><td><input type="checkbox" checked></td><td><input type="checkbox"></td></tr></tbody></table><div class="flex justify-end mt-4"><button class="btn-primary">Salvar permissões</button></div></div></div></div>
+              <div id="configView-parametros" class="config-view hidden"><div class="config-grid"><div class="totre-card config-menu"><button class="active"><i class="fa-regular fa-credit-card"></i>Formas de pagamento</button><button><i class="fa-regular fa-file-lines"></i>Numeração e documentos</button><button><i class="fa-solid fa-tags"></i>Categorias financeiras</button><button><i class="fa-solid fa-building-columns"></i>Contas financeiras</button><button><i class="fa-solid fa-sitemap"></i>Centros de custo</button></div><div class="totre-card p-5"><div class="flex justify-between mb-4"><h3 class="text-lg font-extrabold">Formas de pagamento</h3><button class="btn-primary">+ Nova forma</button></div><form onsubmit="salvarCondicaoPgto(event)" class="flex gap-2 mb-4"><input id="novaCondicaoInput" class="flex-1 p-2 rounded-lg" placeholder="Nova condição" required><button class="btn-primary">Adicionar</button></form><div id="listaCondicoesPgto"></div></div><div class="totre-card p-5"><h3 class="text-lg font-extrabold mb-4">Contas financeiras</h3><form onsubmit="salvarContaBancaria(event)" class="flex gap-2"><input id="novaContaBancariaInput" class="flex-1 p-2 rounded-lg" placeholder="Nova conta" required><button class="btn-primary">Adicionar</button></form><div id="listaContasBancarias" class="mt-4"></div></div></div></div>
+              <div id="configView-integracoes" class="config-view hidden"><div class="grid grid-cols-1 xl:grid-cols-3 gap-4"><div class="xl:col-span-2 space-y-3"><div class="totre-card p-5 flex items-center gap-4"><div class="metric-icon metric-green"><i class="fa-solid fa-bolt"></i></div><div class="flex-1"><h3 class="font-extrabold text-lg">Supabase</h3><p class="text-slate-500">Banco de dados e autenticação em nuvem.</p><span class="badge badge-green mt-2">Conectado</span></div><button onclick="toggleConfigModal()" class="btn-outline">Configurar</button></div><div class="totre-card p-5 flex items-center gap-4"><div class="metric-icon metric-green"><i class="fa-brands fa-whatsapp"></i></div><div class="flex-1"><h3 class="font-extrabold text-lg">WhatsApp</h3><p class="text-slate-500">Envio de mensagens e cobranças.</p></div><button class="btn-outline">Configurar</button></div><div class="totre-card p-5 flex items-center gap-4"><div class="metric-icon metric-blue"><i class="fa-solid fa-envelope"></i></div><div class="flex-1"><h3 class="font-extrabold text-lg">E-mail</h3><p class="text-slate-500">Envio de documentos e notificações.</p></div><button class="btn-outline">Configurar</button></div></div><div class="totre-card p-5"><h3 class="text-lg font-extrabold mb-4">Notificações e aparência</h3><form onsubmit="salvarConfigsGerais(event)" class="space-y-4"><div><label class="font-bold">Chave PIX</label><input id="configPix" class="w-full p-2 rounded-lg mt-1"></div><div><label class="font-bold">Mensagem de cobrança</label><textarea id="configMsgCobranca" rows="5" class="w-full p-2 rounded-lg mt-1">Olá {cliente}, identificamos um valor pendente de R$ {valor} referente a {descricao}. Segue nossa chave PIX: {pix}</textarea></div><button class="btn-primary w-full">Salvar configurações</button></form></div></div></div>
+              <div id="configView-seguranca" class="config-view hidden"><div class="totre-card p-6"><h3 class="text-xl font-extrabold">Segurança e auditoria</h3><p class="text-slate-500 mt-2">Configurações de sessão, acesso e registro de atividades.</p><div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-5"><div class="summary-box"><strong>Autenticação</strong><p class="text-slate-500 mt-2">Login e recuperação de senha ativos.</p></div><div class="summary-box"><strong>Sessão</strong><p class="text-slate-500 mt-2">Controle de permanência conectado.</p></div><div class="summary-box"><strong>Logs de auditoria</strong><p class="text-slate-500 mt-2">Estrutura visual preparada.</p></div></div></div></div>
             </section>
 
         </main>
@@ -1549,11 +1372,6 @@
             if (elRec) elRec.innerText = `R$ ${receitasLiquidadas.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
             if (elDes) elDes.innerText = `R$ ${despesasAVencer.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
             if (elSal) elSal.innerText = `R$ ${saldoRealBancos.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
-            const totalVendasDashboard = (db.vendas || []).reduce((s,v)=>s + Number(v.valor_total || v.total || 0), 0);
-            const elTotalVendas = document.getElementById('dashTotalVendas');
-            if (elTotalVendas) elTotalVendas.innerText = `R$ ${totalVendasDashboard.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
-            const dashPedidos = document.getElementById('dashboardPedidosRecentes');
-            if (dashPedidos) { const ultimos=(db.vendas||[]).slice().sort((a,b)=>String(b.data_emissao||b.data||'').localeCompare(String(a.data_emissao||a.data||''))).slice(0,5); dashPedidos.innerHTML=ultimos.length?ultimos.map(v=>{const p=(db.pessoas||[]).find(x=>x.id===v.cliente_id); const st=String(v.status||'PENDENTE').toUpperCase(); const cls=st.includes('FAT')||st.includes('PAGO')?'green':st.includes('CANCEL')?'red':st.includes('ORC')?'blue':'orange'; return `<tr><td>${v.numero_pedido||v.id||'-'}</td><td>${p?.nome_razasocial||v.cliente_nome||'-'}</td><td>R$ ${Number(v.valor_total||v.total||0).toLocaleString('pt-BR',{minimumFractionDigits:2})}</td><td><span class="approved-status ${cls}">${v.status||'Pendente'}</span></td></tr>`}).join(''):'<tr><td colspan="4" class="text-slate-500">Nenhum pedido encontrado.</td></tr>'; }
 
             // 3. Preenche os selects de Clientes e Condições de Pagamento nos modais de Vendas
             const selectCliente = document.getElementById('vendaCliente');
@@ -1622,7 +1440,7 @@
                         </button>` : '';
 
                     listaVTabela.innerHTML += `
-                        <tr class="hover:bg-slate-800/40 transition">
+                        <tr data-id="${v.id}" class="hover:bg-slate-800/40 transition">
                             <td class="p-3 text-center">
                                 <input type="checkbox" onclick="event.stopPropagation()" class="rounded bg-slate-800 border-slate-700 text-sky-600 focus:ring-0 cursor-pointer">
                             </td>
@@ -1668,8 +1486,8 @@
                 chartFaturamentoInstance = new Chart(ctxFat, {
                     type: 'line',
                     data: {
-                        labels: ['01/05','06/05','11/05','16/05','21/05','26/05','31/05'],
-                        datasets: [{ data: [22000,38000,35000,58000,37000,60000,65000], borderColor: '#0b67f5', backgroundColor:'rgba(11,103,245,.08)', fill:true, pointRadius:3, borderWidth:3, tension: 0.35 }]
+                        labels: ['Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul'],
+                        datasets: [{ data: [1000, 2000, 3500, 4000, 5200, 6100], borderColor: '#0284c7', tension: 0.3 }]
                     },
                     options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
                 });
@@ -1678,9 +1496,12 @@
             const ctxTop = document.getElementById('graficoTopClientes');
             if (ctxTop && !chartTopClientesInstance) {
                 chartTopClientesInstance = new Chart(ctxTop, {
-                    type: 'doughnut',
-                    data: { labels: ['A receber','Em dia','Em atraso','Vencidos'], datasets: [{ data: [50,30,14,6], backgroundColor: ['#2f7df4','#31b875','#ff8a1c','#ef4355'], borderWidth:2, borderColor:'#fff' }] },
-                    options: { responsive:true, maintainAspectRatio:false, cutout:'62%', plugins:{ legend:{ position:'right', labels:{ boxWidth:10, usePointStyle:true, padding:18 } } } }
+                    type: 'bar',
+                    data: {
+                        labels: ['Cliente A', 'Cliente B', 'Cliente C'],
+                        datasets: [{ data: [3000, 2500, 1800], backgroundColor: ['#38bdf8', '#10b981', '#f59e0b'] }]
+                    },
+                    options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
                 });
             }
         }
@@ -2575,5 +2396,36 @@ async function reabrirTituloFinanceiro(id) {
       .catch((err) => console.log("Erro ao registar o PWA Service Worker: ", err));
   }
 </script>
+
+<script id="totre-approved-enhancements">
+(function(){
+ const fmt=v=>(Number(v)||0).toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
+ const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+ function statusBadge(status){const s=String(status||'PENDENTE').toUpperCase();const cls=s.includes('FATUR')||s.includes('PAGO')?'badge-green':s.includes('CANCEL')||s.includes('VENC')?'badge-red':s.includes('ORÇ')||s.includes('ABERTO')?'badge-blue':'badge-orange';return `<span class="badge ${cls}">${esc(status||'Pendente')}</span>`}
+ function renderApprovedExtras(){
+   if(typeof db==='undefined') return;
+   const vendas=db.vendas||[], fin=db.financeiro||[], pessoas=db.pessoas||[];
+   const vendasTotal=vendas.reduce((a,v)=>a+(Number(v.valor_total)||0),0);
+   const receber=fin.filter(f=>f.tipo==='RECEBER'&&f.status!=='PAGO');const pagar=fin.filter(f=>f.tipo==='PAGAR'&&f.status!=='PAGO');
+   const recTotal=receber.reduce((a,f)=>a+(Number(f.valor)||0),0), pagTotal=pagar.reduce((a,f)=>a+(Number(f.valor)||0),0);
+   const set=(id,val)=>{const el=document.getElementById(id);if(el) el.textContent=val};
+   set('dashVendasMes',fmt(vendasTotal));set('dashReceberQtd',`${receber.length} títulos`);set('dashPagarQtd',`${pagar.length} títulos`);
+   set('relTicketMedio',fmt(vendas.length?vendasTotal/vendas.length:0));set('relQtdPedidos',vendas.length);set('relQtdClientes',pessoas.length);set('relNovosClientes',pessoas.length);set('relClientesAtivos',pessoas.length);set('relItensVendidos',vendas.reduce((a,v)=>a+(v.itens||[]).reduce((x,i)=>x+(Number(i.quantidade)||0),0),0));set('relFaturamentoProdutos',fmt(vendasTotal));set('relRecebido',fmt(fin.filter(f=>f.tipo==='RECEBER'&&f.status==='PAGO').reduce((a,f)=>a+(Number(f.valor)||0),0)));set('relPago',fmt(fin.filter(f=>f.tipo==='PAGAR'&&f.status==='PAGO').reduce((a,f)=>a+(Number(f.valor)||0),0)));
+   const vb=document.getElementById('dashVencimentosBody');if(vb){vb.innerHTML=fin.filter(f=>f.status!=='PAGO').slice(0,6).map(f=>`<tr><td>${esc(f.descricao||f.numero_documento||'Título')}</td><td>${esc(f.vencimento||'--')}</td><td>${fmt(f.valor)}</td><td>${statusBadge(f.status||'A vencer')}</td></tr>`).join('')||'<tr><td colspan="4">Sem vencimentos</td></tr>'}
+   const pb=document.getElementById('dashPedidosBody');if(pb){pb.innerHTML=vendas.slice(-6).reverse().map(v=>`<tr><td>#${String(v.numero_pedido||'').padStart(6,'0')}</td><td>${esc(v.cliente_nome||'--')}</td><td>${esc(v.data_emissao||'--')}</td><td>${fmt(v.valor_total)}</td><td>${statusBadge(v.status)}</td></tr>`).join('')||'<tr><td colspan="5">Sem pedidos</td></tr>'}
+   const rb=document.getElementById('reportTableBody');if(rb){rb.innerHTML=vendas.slice(-10).reverse().map(v=>`<tr><td>${esc(v.cliente_nome||'--')}</td><td>#${String(v.numero_pedido||'').padStart(6,'0')}</td><td>${esc(v.data_emissao||'--')}</td><td>${fmt(v.valor_total)}</td><td>${statusBadge(v.status)}</td></tr>`).join('')}
+   set('previewEmpresaNome',db.empresa?.razao||'TOTRE');set('previewEmpresaCnpj',`CNPJ: ${db.empresa?.cnpj||'--'}`);set('previewEmpresaContato',db.empresa?.telefone||'--');
+ }
+ window.showReport=function(name,btn){document.querySelectorAll('.report-view').forEach(x=>x.classList.add('hidden'));document.getElementById('reportView-'+name)?.classList.remove('hidden');document.querySelectorAll('.report-nav button').forEach(x=>x.classList.remove('active'));btn?.classList.add('active');renderApprovedExtras()}
+ window.showConfig=function(name,btn){document.querySelectorAll('.config-view').forEach(x=>x.classList.add('hidden'));document.getElementById('configView-'+name)?.classList.remove('hidden');document.querySelectorAll('.config-nav button').forEach(x=>x.classList.remove('active'));if(btn)btn.classList.add('active')}
+ const oldUpdate=window.updateUI;window.updateUI=function(){if(oldUpdate) oldUpdate();setTimeout(renderApprovedExtras,0)};
+ const oldSwitch=window.switchTab;window.switchTab=function(id){if(oldSwitch)oldSwitch(id);setTimeout(renderApprovedExtras,0)};
+ document.addEventListener('click',e=>{const tr=e.target.closest('#listaVendasTabela tr');if(tr&&tr.dataset.id){const v=(db.vendas||[]).find(x=>String(x.id)===String(tr.dataset.id));const p=document.getElementById('pedidoDetalhePainel');if(v&&p)p.innerHTML=`<div class="text-xs text-slate-500">Nº do pedido</div><div class="text-2xl font-extrabold mt-1">${esc(v.numero_pedido)}</div><div class="mt-5"><strong>Cliente</strong><p>${esc(v.cliente_nome)}</p></div><div class="mt-5"><strong>Itens do pedido</strong>${(v.itens||[]).map(i=>`<div class="summary-line"><span>${esc(i.descricao)}<small class="block text-slate-500">${i.quantidade||1} un × ${fmt(i.valor_unitario)}</small></span><strong>${fmt(i.total)}</strong></div>`).join('')}</div><div class="mt-5 text-sm">Total do pedido</div><div class="text-2xl font-extrabold">${fmt(v.valor_total)}</div><div class="grid grid-cols-2 gap-2 mt-5"><button onclick="gerarPdfPedido('${v.id}')" class="btn-outline">Gerar PDF</button><button onclick="enviarPedidoWhatsApp('${v.id}')" class="btn-outline">WhatsApp</button></div>`;}
+   const ftr=e.target.closest('#tabelaContasReceber tr,#tabelaContasPagar tr');if(ftr&&ftr.dataset.id){const f=(db.financeiro||[]).find(x=>String(x.id)===String(ftr.dataset.id));const p=document.getElementById('financeiroDetalhePainel');if(f&&p)p.innerHTML=`<div class="text-xs text-slate-500">Documento</div><div class="text-xl font-extrabold">${esc(f.numero_documento||f.id)}</div><div class="mt-4">${statusBadge(f.status)}</div><div class="summary-line mt-4"><span>Valor original</span><strong>${fmt(f.valor)}</strong></div><div class="summary-line"><span>Vencimento</span><strong>${esc(f.vencimento||'--')}</strong></div><div class="summary-line"><span>Descrição</span><strong>${esc(f.descricao||'--')}</strong></div>`;}
+ });
+ document.addEventListener('DOMContentLoaded',()=>setTimeout(renderApprovedExtras,350));
+})();
+</script>
+
 </body>
 </html>
