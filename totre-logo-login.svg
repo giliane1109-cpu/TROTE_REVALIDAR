@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 120">
+<defs><linearGradient id="b" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0879ff"/><stop offset="1" stop-color="#0059db"/></linearGradient></defs>
+<g transform="translate(0,0)"><path fill="url(#b)" d="M12 16h90c0 15-10 25-25 25H12z"/><path fill="url(#b)" d="M12 46h58c0 14-9 23-23 23H12z"/><path fill="url(#b)" d="M31 63h28v35c0 13-8 22-20 22-5 0-8-3-8-9z"/><path fill="#0d5ee7" d="M64 40h24v45c0 15-9 24-24 28z"/></g>
+<text x="125" y="82" fill="#092e63" font-family="Segoe UI,Arial,sans-serif" font-size="58" font-weight="900" letter-spacing="3">TOTRE</text>
+</svg>

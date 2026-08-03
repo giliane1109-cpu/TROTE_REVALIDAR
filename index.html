@@ -39,55 +39,158 @@
     <link rel="icon" type="image/png" href="icone-totre.png">
     <meta name="theme-color" content="#0284c7">
 
-    <style id="totre-approved-ui">
-      :root{--navy:#072b5c;--navy2:#031d42;--blue:#0b67f5;--blue2:#2f7df4;--bg:#f5f8fc;--card:#fff;--ink:#0d1b3a;--muted:#667085;--line:#dfe7f1;--green:#12ad64;--red:#ef4355;--orange:#ff8a1c;--purple:#7a4ce0}
-      *{box-sizing:border-box} body.totre-modern{background:var(--bg)!important;color:var(--ink)!important;font-family:Inter,"Segoe UI",Arial,sans-serif}
-      body.totre-modern .bg-slate-950{background:var(--bg)!important} body.totre-modern .bg-slate-900{background:#fff!important}
+    <style id="totre-modern-theme">
+      :root{--totre:#2463eb;--totre2:#6f5cf3;--ink:#172033;--muted:#6b7280;--line:#e7eaf0;--surface:#ffffff;--bg:#f5f7fb}
+      body.totre-modern{background:var(--bg)!important;color:var(--ink)!important;font-family:Inter,"Segoe UI",Arial,sans-serif}
+      body.totre-modern .bg-slate-950{background:var(--bg)!important}
+      body.totre-modern .bg-slate-900{background:#fff!important}
       body.totre-modern .bg-slate-800,body.totre-modern .bg-slate-800\/90,body.totre-modern .bg-slate-800\/80,body.totre-modern .bg-slate-800\/60,body.totre-modern .bg-slate-800\/40{background:#f8fafc!important}
       body.totre-modern .border-slate-800,body.totre-modern .border-slate-700,body.totre-modern .border-slate-700\/50,body.totre-modern .border-slate-700\/60,body.totre-modern .border-slate-700\/80{border-color:var(--line)!important}
-      body.totre-modern .text-white,body.totre-modern .text-slate-200,body.totre-modern .text-slate-300{color:var(--ink)!important} body.totre-modern .text-slate-400,body.totre-modern .text-slate-500{color:var(--muted)!important}
-      body.totre-modern aside{width:252px!important;background:linear-gradient(180deg,var(--navy),var(--navy2))!important;border:0!important;box-shadow:8px 0 30px rgba(2,24,57,.12);padding:0 12px;z-index:40}
-      .totre-sidebar-logo{display:flex;align-items:center;justify-content:center;padding:22px 6px 18px;border-bottom:1px solid rgba(255,255,255,.12)} .totre-sidebar-logo img{width:178px;height:auto;filter:brightness(0) invert(1)}
-      body.totre-modern aside .nav-link{height:50px;color:#fff!important;border:0!important;border-radius:9px!important;font-size:14px!important;font-weight:650!important;padding:0 15px!important;gap:14px!important;opacity:.92}
-      body.totre-modern aside .nav-link i{color:#fff!important;font-size:18px!important;width:22px!important} body.totre-modern aside .nav-link:hover{background:rgba(255,255,255,.10)!important;color:#fff!important}
-      body.totre-modern aside .nav-link.active{background:linear-gradient(90deg,#0d6cf4,#1c74e9)!important;color:#fff!important;box-shadow:0 8px 20px rgba(0,93,224,.32)!important}
-      .totre-user-card{border:1px solid rgba(255,255,255,.18);border-radius:11px;padding:13px;color:#fff;background:rgba(255,255,255,.04)} .totre-user-card strong{font-size:13px}.totre-user-card small{color:#d2dded;font-size:10px}
-      .totre-logout{margin-top:8px;border:1px solid rgba(255,255,255,.15)!important;background:rgba(255,255,255,.06)!important;color:#fff!important}.totre-logout:hover{background:rgba(255,255,255,.13)!important}
-      main{max-width:none!important;padding:24px 28px 70px!important} .tab-content>div.bg-slate-900,.tab-content>section,.tab-content .bg-slate-900{border-radius:12px!important}
-      body.totre-modern input,body.totre-modern select,body.totre-modern textarea{background:#fff!important;color:var(--ink)!important;border-color:#cfd9e6!important;border-radius:8px!important} body.totre-modern input:focus,body.totre-modern select:focus,body.totre-modern textarea:focus{border-color:var(--blue)!important;box-shadow:0 0 0 3px rgba(11,103,245,.12)!important}
-      body.totre-modern table{background:#fff} body.totre-modern thead{background:#f8fafc!important;color:#53627a!important} body.totre-modern tbody tr:hover{background:#f4f8ff!important}
-      body.totre-modern .shadow,body.totre-modern .shadow-md,body.totre-modern .shadow-2xl{box-shadow:0 3px 12px rgba(23,43,77,.07)!important}
-      body.totre-modern button.bg-sky-600,body.totre-modern button.bg-emerald-600{background:linear-gradient(135deg,#0b67f5,#0758d7)!important;color:#fff!important}
-      .approved-page-title{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:4px}.approved-page-title h2{font-size:32px;line-height:1.1;font-weight:800;color:var(--ink);letter-spacing:-.02em}.approved-page-title p{font-size:15px;color:var(--muted);margin-top:8px}.approved-actions{display:flex;align-items:center;gap:12px}.approved-period,.approved-refresh{height:45px;border:1px solid #cfd9e6;border-radius:8px;background:#fff;padding:0 16px;color:#16213b;font-size:13px;display:flex;align-items:center;gap:10px}.approved-refresh{background:var(--blue);color:#fff;border-color:var(--blue)}
-      .approved-kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.approved-card{background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 3px 12px rgba(23,43,77,.07)}.approved-kpi{padding:20px;display:flex;align-items:center;gap:16px;min-height:122px}.approved-icon{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:25px;flex:0 0 auto}.approved-icon.blue{background:linear-gradient(145deg,#0870ff,#075bd6)}.approved-icon.green{background:linear-gradient(145deg,#28c276,#0b9d59)}.approved-icon.orange{background:linear-gradient(145deg,#ff992b,#ff6f00)}.approved-icon.purple{background:linear-gradient(145deg,#8a5ce8,#6537d3)}.approved-kpi-label{font-size:13px;color:#1a2947}.approved-kpi-value{font-size:22px;font-weight:800;color:#0c1936;margin-top:3px}.approved-trend{font-size:12px;color:#10a85b;margin-top:10px}.approved-grid-2{display:grid;grid-template-columns:1.35fr 1fr;gap:16px}.approved-panel{padding:18px 20px}.approved-panel h3{font-size:18px;font-weight:750;color:#111e3c;margin-bottom:12px}.approved-chart{height:275px;position:relative}.approved-bottom{display:grid;grid-template-columns:1fr 1fr;gap:16px}.approved-table{width:100%;font-size:12px}.approved-table th,.approved-table td{padding:10px 8px;border-bottom:1px solid #e7edf5;text-align:left}.approved-table th{color:#40506a;font-weight:650}.approved-status{border-radius:6px;padding:4px 9px;font-size:10px;font-weight:650;display:inline-block}.approved-status.green{background:#ddf6e7;color:#078a46}.approved-status.blue{background:#e2efff;color:#0762d8}.approved-status.orange{background:#fff0dc;color:#df6a00}.approved-status.red{background:#ffe2e5;color:#d92b3b}
-      #totreLogin{position:fixed;inset:0;z-index:9999;display:grid;grid-template-columns:1.12fr .88fr;background:linear-gradient(125deg,#f8fbff,#edf4ff);overflow:hidden} #totreLogin.hidden{display:none}
-      .login-art{position:relative;padding:70px 8vw;display:flex;flex-direction:column;justify-content:center;overflow:hidden;background:linear-gradient(135deg,#f1f7ff 0%,#eef5ff 100%)} .login-art:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 8% 20%,rgba(33,116,255,.14) 0 72px,transparent 73px),radial-gradient(circle at 20% 70%,rgba(33,116,255,.13) 0 120px,transparent 121px),linear-gradient(90deg,rgba(24,103,235,.10) 1px,transparent 1px),linear-gradient(rgba(24,103,235,.10) 1px,transparent 1px);background-size:auto,auto,165px 165px,165px 165px;opacity:.9}.login-brand{position:relative;z-index:2;max-width:530px}.login-logo img{width:455px;max-width:100%;height:auto}.login-tagline{font-size:36px;line-height:1.35;color:#15213a;font-weight:450;max-width:520px;margin-top:34px}
-      .login-panel{display:flex;align-items:center;justify-content:center;padding:50px;background:rgba(246,250,255,.65)}.login-card{width:100%;max-width:510px;background:#fff;border:1px solid #e3e9f1;border-radius:16px;padding:48px 50px;box-shadow:0 15px 42px rgba(35,61,101,.13)}.login-card h1{font-size:36px;color:#0d2d59;font-weight:800;text-align:center;margin:0 0 6px}.login-card .sub{text-align:center;color:#6c788b;margin-bottom:34px;font-size:20px}.field{margin-bottom:20px}.field label{display:block;font-weight:700;color:#202c41;margin-bottom:9px;font-size:15px}.field-wrap{position:relative}.field-wrap i{position:absolute;left:15px;top:50%;transform:translateY(-50%);color:#758196;font-size:18px}.field-wrap input{width:100%;height:58px;padding:0 48px;border:1px solid #c8d2df;border-radius:7px;font-size:16px;outline:none}.field-wrap button{position:absolute;right:8px;top:50%;transform:translateY(-50%);background:transparent;border:0;color:#6c788b;padding:9px}.login-row{display:flex;justify-content:space-between;align-items:center;margin:4px 0 25px;font-size:14px;color:#38455a}.login-row label{display:flex;align-items:center;gap:9px}.login-row a{color:#0567ee;font-weight:600;text-decoration:none}.login-submit{width:100%;height:60px;border:0;border-radius:7px;color:#fff;font-weight:700;font-size:19px;background:linear-gradient(90deg,#0a70f8,#0963e7);box-shadow:0 8px 20px rgba(9,100,235,.22)}.login-note{margin-top:28px;padding:16px;border:1px solid #e1e8f1;border-radius:7px;background:#f8fbff;color:#67748a;font-size:13px;text-align:center}.login-error{display:none;margin:-5px 0 14px;padding:10px 12px;background:#fff1f2;border:1px solid #fecdd3;color:#be123c;border-radius:8px;font-size:12px}.login-error.show{display:block}
-      @media(max-width:1100px){.approved-kpis{grid-template-columns:repeat(2,1fr)}.approved-grid-2,.approved-bottom{grid-template-columns:1fr}} @media(max-width:900px){#totreLogin{grid-template-columns:1fr}.login-art{display:none}.login-panel{padding:20px}.login-card{padding:32px 24px}.approved-kpis{grid-template-columns:1fr}.approved-actions{display:none}main{padding:18px 14px 78px!important}.approved-page-title h2{font-size:26px}}
-    </style>
-
+      body.totre-modern .text-white,body.totre-modern .text-slate-200,body.totre-modern .text-slate-300{color:var(--ink)!important}
+      body.totre-modern .text-slate-400,body.totre-modern .text-slate-500{color:var(--muted)!important}
+      body.totre-modern aside{box-shadow:8px 0 32px rgba(15,23,42,.05);z-index:20}
+      body.totre-modern .nav-link{color:#5b6475!important;border-right:0!important}
+      body.totre-modern .nav-link:hover{background:#eff4ff!important;color:var(--totre)!important}
+      body.totre-modern .nav-link.active{background:linear-gradient(135deg,#eaf1ff,#f1eeff)!important;color:var(--totre)!important;border-right:0!important;box-shadow:inset 0 0 0 1px #dce6ff}
+      body.totre-modern input,body.totre-modern select,body.totre-modern textarea{background:#fff!important;color:var(--ink)!important;border-color:#dfe3eb!important}
+      body.totre-modern input:focus,body.totre-modern select:focus,body.totre-modern textarea:focus{border-color:var(--totre)!important;box-shadow:0 0 0 3px rgba(36,99,235,.12)!important}
+      body.totre-modern table{background:#fff}
+      body.totre-modern thead{background:#f8fafc!important;color:#6b7280!important}
+      body.totre-modern tbody tr:hover{background:#f8fbff}
+      body.totre-modern .shadow,body.totre-modern .shadow-md,body.totre-modern .shadow-2xl{box-shadow:0 10px 30px rgba(15,23,42,.07)!important}
+      body.totre-modern button.bg-sky-600,body.totre-modern button.bg-emerald-600{background:linear-gradient(135deg,var(--totre),var(--totre2))!important;color:#fff!important}
+      body.totre-modern .fixed.bg-black\/80,body.totre-modern .fixed.bg-black\/70,body.totre-modern .fixed.bg-black\/85{background:rgba(15,23,42,.45)!important;backdrop-filter:blur(5px)}
+      .totre-brand-chip{background:linear-gradient(135deg,var(--totre),var(--totre2));color:#fff;border-radius:12px;padding:9px 12px;font-weight:900;letter-spacing:.14em;text-align:center;box-shadow:0 8px 20px rgba(36,99,235,.22)}
+      .totre-logout{width:100%;display:flex;align-items:center;justify-content:center;gap:8px;border:1px solid #e4e8ef;background:#fff;color:#64748b;border-radius:10px;padding:9px;font-weight:700;font-size:11px;margin-top:8px}
+      .totre-logout:hover{background:#fff1f2;color:#e11d48;border-color:#fecdd3}
+      /* LOGIN APROVADO — recriado em HTML/CSS/SVG vetorial (sem imagem raster embaçada) */
+      #totreLogin{position:fixed;inset:0;z-index:9999;display:grid;grid-template-columns:minmax(560px,1.08fr) minmax(560px,.92fr);min-height:100dvh;background:#f6f9ff;overflow:hidden;font-family:Inter,"Segoe UI",Arial,sans-serif;color:#0b2a58}
+      #totreLogin.hidden{display:none}
+      .login-art{position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:clamp(40px,6vw,105px);background:radial-gradient(circle at 50% 48%,#fff 0,#f7faff 48%,#eef5ff 100%)}
+      .login-pattern{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+      .geo{position:absolute;border:1px solid rgba(255,255,255,.92);background:linear-gradient(145deg,rgba(211,229,255,.92),rgba(137,187,255,.55));}
+      .geo.g1{left:-2px;top:-18px;width:190px;height:250px;border-radius:0 0 105px 0}
+      .geo.g2{left:88px;top:-18px;width:126px;height:126px;border-radius:0 0 70px 0;background:rgba(244,249,255,.9)}
+      .geo.g3{left:190px;top:-25px;width:132px;height:132px;border-radius:0 0 80px 0}
+      .geo.g4{left:122px;top:105px;width:82px;height:82px;border-radius:50%;background:linear-gradient(145deg,#e7f1ff,#bdd7ff)}
+      .geo.g5{left:0;top:232px;width:170px;height:250px;border-radius:0 90px 0 0;background:linear-gradient(145deg,#e8f2ff,#c8ddff)}
+      .geo.g6{left:0;top:482px;width:168px;height:222px;border-radius:0;background:linear-gradient(145deg,#dcecff,#a9ccff)}
+      .geo.g7{left:168px;top:480px;width:122px;height:90px;border-radius:0 90px 0 0;background:linear-gradient(145deg,#f1f6ff,#d9e8ff)}
+      .geo.g8{left:0;bottom:0;width:170px;height:215px;border-radius:0 0 82px 0;background:linear-gradient(145deg,#cfe3ff,#86b8ff)}
+      .geo.g9{left:169px;bottom:0;width:244px;height:223px;border-radius:115px 115px 0 0;background:linear-gradient(145deg,#e6f0ff,#c0d8ff)}
+      .geo.g10{left:78px;bottom:78px;width:170px;height:170px;border-radius:50%;background:transparent;border-color:rgba(255,255,255,.85)}
+      .geo.g11{left:176px;top:423px;width:50px;height:50px;border-radius:50%;background:linear-gradient(145deg,#d4e6ff,#8fbbff)}
+      .geo.g12{left:405px;bottom:82px;width:49px;height:49px;border-radius:50%;background:linear-gradient(145deg,#d4e6ff,#8fbbff)}
+      .login-brand{position:relative;z-index:2;width:min(620px,80%);transform:translateY(5px)}
+      .login-logo{display:flex;align-items:center;gap:28px;margin-bottom:34px}
+      .totre-logo-svg{width:132px;height:132px;flex:0 0 auto;filter:drop-shadow(0 8px 13px rgba(10,104,239,.14))}
+      .login-word{font-size:clamp(62px,5.2vw,96px);line-height:.95;font-weight:900;letter-spacing:.045em;color:#092e63}
+      .login-tagline{font-size:clamp(28px,2.15vw,42px);line-height:1.3;color:#102a4d;font-weight:400;max-width:610px}
+      .login-panel{position:relative;display:flex;align-items:center;justify-content:center;padding:clamp(32px,4.8vw,84px);background:radial-gradient(circle at 25% 35%,rgba(255,255,255,.95),rgba(239,246,255,.92));}
+      .login-card{width:min(100%,650px);background:rgba(255,255,255,.97);border:1px solid rgba(222,230,241,.95);border-radius:22px;padding:54px 58px 52px;box-shadow:0 25px 58px rgba(36,55,90,.14)}
+      .login-card-icon{width:58px;height:58px;margin:0 auto 20px;display:grid;place-items:center;border:2px solid #0873ff;border-radius:12px;color:#0873ff;font-size:31px}
+      .login-card h1{font-size:clamp(30px,2.1vw,42px);color:#092e63;font-weight:850;text-align:center;margin:0 0 5px;letter-spacing:-.02em}
+      .login-card .sub{text-align:center;color:#69768b;margin-bottom:34px;font-size:clamp(18px,1.35vw,24px)}
+      .field{margin-bottom:20px}.field label{display:block;font-weight:750;color:#16253c;margin-bottom:9px;font-size:16px}.field-wrap{position:relative}.field-wrap>i{position:absolute;left:17px;top:50%;transform:translateY(-50%);color:#738096;font-size:22px}.field-wrap input{box-sizing:border-box;width:100%;height:60px;padding:0 50px 0 54px;border:1px solid #cfd8e5;border-radius:7px;font-size:18px;outline:none;background:#fff;color:#14223a}.field-wrap input::placeholder{color:#8793a7}.field-wrap input:focus{border-color:#0873ff;box-shadow:0 0 0 3px rgba(8,115,255,.11)}.field-wrap button{position:absolute;right:10px;top:50%;transform:translateY(-50%);background:transparent;border:0;color:#6f7d92;padding:10px;font-size:21px;cursor:pointer}
+      .login-row{display:flex;justify-content:space-between;align-items:center;gap:14px;margin:3px 0 25px;font-size:16px;color:#27354b}.login-row label{display:flex;align-items:center;gap:10px;cursor:pointer}.login-row input{width:22px;height:22px;accent-color:#0873ff}.login-row a{color:#0873ff;font-weight:600;text-decoration:none}.login-row a:hover{text-decoration:underline}
+      .login-submit{width:100%;height:62px;border:0;border-radius:7px;color:#fff;font-weight:600;font-size:22px;background:linear-gradient(90deg,#086ff1,#0977ff);box-shadow:0 11px 22px rgba(8,112,241,.18);cursor:pointer}.login-submit:hover{filter:brightness(1.035)}.login-submit:active{transform:translateY(1px)}
+      .login-note{display:flex;align-items:center;gap:14px;margin-top:28px;padding:15px 17px;text-align:left;color:#66758b;font-size:15px;line-height:1.4;background:#f6f9fd;border:1px solid #e1e8f2;border-radius:8px}.login-note i{display:grid;place-items:center;width:36px;height:36px;flex:0 0 36px;border-radius:50%;background:#e7f1ff;color:#0873ff;font-size:18px}.login-error{display:none;margin:-10px 0 15px;padding:11px 13px;background:#fff1f2;border:1px solid #fecdd3;color:#be123c;border-radius:8px;font-size:13px}.login-error.show{display:block}
+      .login-footer{position:absolute;left:0;right:0;bottom:24px;display:flex;justify-content:center;align-items:center;gap:11px;text-align:center;font-size:15px;color:#56708f}.login-footer i{color:#0c3f7c;font-size:19px}
+      @media(max-width:1150px){#totreLogin{grid-template-columns:1fr 1fr}.login-art{padding:45px}.login-brand{width:92%}.totre-logo-svg{width:100px;height:100px}.login-logo{gap:20px}.login-word{font-size:58px}.login-tagline{font-size:29px}.login-card{padding:40px 36px}.login-card h1{font-size:31px}.login-card .sub{font-size:19px}}
+      @media(max-width:820px){#totreLogin{grid-template-columns:1fr;overflow:auto}.login-art{display:none}.login-panel{min-height:100dvh;padding:28px 18px 72px}.login-card{max-width:520px;padding:35px 24px 31px}.login-card:before{content:"";display:block;width:180px;height:65px;margin:0 auto 20px;background:url('totre-logo-login.svg') center/contain no-repeat}.login-card-icon{width:52px;height:52px;font-size:27px}.login-card h1{font-size:29px}.login-card .sub{font-size:18px}.login-row{font-size:14px}.login-footer{position:fixed;bottom:13px;font-size:13px}}
+        </style>
 
 </head>
 <body class="totre-modern flex h-screen overflow-hidden text-[11px] leading-tight">
 
     <section id="totreLogin" aria-label="Acesso ao TOTRE">
-      <div class="login-art"><div class="login-brand"><div class="login-logo"><img src="assets/totre-logo-aprovada.png" alt="TOTRE"></div><div class="login-tagline">Controle simples para<br>sua empresa crescer.</div></div></div>
-      <div class="login-panel"><form class="login-card" id="totreLoginForm"><h1>Bem-vindo ao TOTRE</h1><div class="sub">Gestão empresarial</div><div id="totreLoginError" class="login-error">E-mail ou senha inválidos.</div><div class="field"><label for="totreEmail">E-mail</label><div class="field-wrap"><i class="fa-regular fa-envelope"></i><input id="totreEmail" type="email" autocomplete="username" placeholder="Digite seu e-mail" required></div></div><div class="field"><label for="totrePassword">Senha</label><div class="field-wrap"><i class="fa-solid fa-lock"></i><input id="totrePassword" type="password" autocomplete="current-password" placeholder="Digite sua senha" required><button type="button" id="toggleTotrePassword" aria-label="Mostrar senha"><i class="fa-regular fa-eye"></i></button></div></div><div class="login-row"><label><input id="totreRemember" type="checkbox"> Manter conectado</label><a href="#" id="totreForgot">Esqueci minha senha</a></div><button class="login-submit" type="submit">Entrar</button><div class="login-note"><i class="fa-solid fa-shield-halved" style="color:#0b67f5;margin-right:8px"></i>Informe seu e-mail e senha para acessar o sistema.</div></form></div>
+      <div class="login-art" aria-hidden="true">
+        <div class="login-pattern">
+          <span class="geo g1"></span><span class="geo g2"></span><span class="geo g3"></span><span class="geo g4"></span>
+          <span class="geo g5"></span><span class="geo g6"></span><span class="geo g7"></span><span class="geo g8"></span>
+          <span class="geo g9"></span><span class="geo g10"></span><span class="geo g11"></span><span class="geo g12"></span>
+        </div>
+        <div class="login-brand">
+          <div class="login-logo">
+            <svg class="totre-logo-svg" viewBox="0 0 120 120" role="img" aria-label="Símbolo TOTRE">
+              <defs><linearGradient id="totreBlue" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0879ff"/><stop offset="1" stop-color="#0059db"/></linearGradient></defs>
+              <path fill="url(#totreBlue)" d="M16 18h86c0 15-10 25-25 25H16z"/>
+              <path fill="url(#totreBlue)" d="M16 47h56c0 14-9 23-23 23H16z"/>
+              <path fill="url(#totreBlue)" d="M35 64h27v34c0 13-8 22-20 22-5 0-7-3-7-9z"/>
+              <path fill="#0d5ee7" d="M66 42h23v43c0 15-8 24-23 28z" opacity=".96"/>
+            </svg>
+            <div class="login-word">TOTRE</div>
+          </div>
+          <div class="login-tagline">Controle simples para<br>sua empresa crescer.</div>
+        </div>
+      </div>
+      <div class="login-panel">
+        <form class="login-card" id="totreLoginForm">
+          <div class="login-card-icon"><i class="fa-solid fa-chart-column"></i></div>
+          <h1>Bem-vindo ao TOTRE</h1>
+          <div class="sub">Gestão empresarial</div>
+          <div id="totreLoginError" class="login-error">E-mail ou senha inválidos.</div>
+          <div class="field"><label for="totreEmail">E-mail</label><div class="field-wrap"><i class="fa-regular fa-envelope"></i><input id="totreEmail" type="email" autocomplete="username" placeholder="Digite seu e-mail" required></div></div>
+          <div class="field"><label for="totrePassword">Senha</label><div class="field-wrap"><i class="fa-solid fa-lock"></i><input id="totrePassword" type="password" autocomplete="current-password" placeholder="Digite sua senha" required><button type="button" id="toggleTotrePassword" aria-label="Mostrar senha"><i class="fa-regular fa-eye"></i></button></div></div>
+          <div class="login-row"><label><input id="totreRemember" type="checkbox"> Manter conectado</label><a href="#" id="totreForgot">Esqueci minha senha</a></div>
+          <button class="login-submit" type="submit">Entrar</button>
+          <div class="login-note"><i class="fa-solid fa-shield-halved"></i><span>Informe seu e-mail e senha para acessar o sistema.</span></div>
+        </form>
+        <div class="login-footer"><i class="fa-solid fa-chart-column"></i><span>TOTRE Gestão Empresarial</span></div>
+      </div>
     </section>
-    <!-- SIDEBAR LATERAL APROVADA -->
 
+
+    <!-- SIDEBAR LATERAL COMPACTA -->
     <aside class="w-52 bg-slate-900 border-r border-slate-800 flex flex-col justify-between shrink-0 hidden md:flex">
-      <div><div class="totre-sidebar-logo"><img src="assets/totre-logo-aprovada.png" alt="TOTRE"></div><nav class="py-4 space-y-2">
-        <button onclick="switchTab('dashboardTab')" id="nav-dashboardTab" class="nav-link active w-full flex items-center"><i class="fa-solid fa-house"></i>Visão Geral</button>
-        <button onclick="switchTab('cadastrosTab')" id="nav-cadastrosTab" class="nav-link w-full flex items-center"><i class="fa-solid fa-users"></i>Clientes</button>
-        <button onclick="switchTab('vendasTab')" id="nav-vendasTab" class="nav-link w-full flex items-center"><i class="fa-solid fa-file-lines"></i>Pedidos</button>
-        <button onclick="switchTab('financeiroTab')" id="nav-financeiroTab" class="nav-link w-full flex items-center"><i class="fa-solid fa-circle-dollar-to-slot"></i>Financeiro</button>
-        <button onclick="switchTab('relatoriosTab')" id="nav-relatoriosTab" class="nav-link w-full flex items-center"><i class="fa-solid fa-chart-column"></i>Relatórios</button>
-        <button onclick="switchTab('configuracoesTab')" id="nav-configuracoesTab" class="nav-link w-full flex items-center"><i class="fa-solid fa-gear"></i>Configurações</button>
-      </nav></div>
-      <div class="pb-4"><div class="totre-user-card"><div class="flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center text-white text-lg"><i class="fa-solid fa-user"></i></div><div class="min-w-0"><strong class="block">Admin</strong><small class="block">Administrador</small></div></div></div><div class="mt-3 px-2 text-white"><strong id="sideEmpresaNome" class="block text-[12px] truncate">--</strong><small class="text-[10px] text-blue-100">Gestão empresarial</small></div><button onclick="toggleConfigModal()" class="totre-logout"><i class="fa-solid fa-database"></i> Conexão Supabase</button><button onclick="totreLogout()" class="totre-logout"><i class="fa-solid fa-arrow-right-from-bracket"></i> Sair</button></div>
-    </aside>
+        <div>
+            <div class="p-3 border-b border-slate-800 flex items-center justify-between">
+                <div class="flex flex-col gap-0.5 w-full">
+                    <div class="totre-brand-chip w-full">
+                        TOTRE
+                    </div>
+                    <span id="sideEmpresaNome" class="text-[9px] font-bold text-slate-400 uppercase tracking-tight truncate text-center block w-full px-1">
+                        --
+                    </span>
+                </div>
+            </div>
 
+            <!-- Menus da Lateral -->
+            <nav class="p-2 space-y-1 mt-1">
+                <button onclick="switchTab('dashboardTab')" id="nav-dashboardTab" class="nav-link active w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-slate-300 font-semibold text-xs hover:bg-slate-800 transition-all">
+                    <i class="fa-solid fa-chart-pie text-sm text-sky-400 w-4 text-center"></i>
+                    Dashboard
+                </button>
+                <button onclick="switchTab('vendasTab')" id="nav-vendasTab" class="nav-link w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-slate-300 font-semibold text-xs hover:bg-slate-800 transition-all">
+                    <i class="fa-solid fa-cart-shopping text-sm text-emerald-400 w-4 text-center"></i>
+                    Vendas
+                </button>
+                <button onclick="switchTab('financeiroTab')" id="nav-financeiroTab" class="nav-link w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-slate-300 font-semibold text-xs hover:bg-slate-800 transition-all">
+                    <i class="fa-solid fa-wallet text-sm text-amber-400 w-4 text-center"></i>
+                    Financeiro
+                </button>
+                <button onclick="switchTab('cadastrosTab')" id="nav-cadastrosTab" class="nav-link w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-slate-300 font-semibold text-xs hover:bg-slate-800 transition-all">
+                    <i class="fa-solid fa-users text-sm text-indigo-400 w-4 text-center"></i>
+                    Cadastros
+                </button>
+                <button onclick="switchTab('relatoriosTab')" id="nav-relatoriosTab" class="nav-link w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-slate-300 font-semibold text-xs hover:bg-slate-800 transition-all">
+                    <i class="fa-solid fa-file-invoice-dollar text-sm text-purple-400 w-4 text-center"></i>
+                    Relatórios
+                </button>
+                <button onclick="switchTab('configuracoesTab')" id="nav-configuracoesTab" class="nav-link w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-slate-300 font-semibold text-xs hover:bg-slate-800 transition-all">
+                    <i class="fa-solid fa-gear text-sm text-slate-400 w-4 text-center"></i>
+                    Configurações
+                </button>
+            </nav>
+        </div>
+
+        <div class="p-2 border-t border-slate-800">
+            <button onclick="toggleConfigModal()" class="w-full flex items-center justify-center gap-1.5 bg-slate-800 hover:bg-slate-700 text-[10px] font-bold text-slate-300 py-2 rounded-lg border border-slate-700/50 transition">
+                <i class="fa-solid fa-database text-sky-400"></i> Conexão Supabase
+            </button>
+            <button onclick="totreLogout()" class="totre-logout"><i class="fa-solid fa-arrow-right-from-bracket"></i> Sair</button>
+        </div>
+    </aside>
 
     <!-- AREA PRINCIPAL DE CONTEÚDO -->
     <div class="flex-1 flex flex-col h-screen overflow-y-auto bg-slate-950">
@@ -366,20 +469,95 @@
         <main class="p-3 md:p-5 w-full mx-auto pb-16 md:pb-5 space-y-4 flex-1 flex flex-col">
 
             <!-- DASHBOARD TAB -->
-
             <section id="dashboardTab" class="tab-content active space-y-4">
-              <div class="approved-page-title"><div><h2>Visão Geral</h2><p>Resumo geral do seu negócio</p></div><div class="approved-actions"><div class="approved-period"><i class="fa-regular fa-calendar"></i><span>01/05/2025 - 31/05/2025</span><i class="fa-solid fa-chevron-down"></i></div><button class="approved-refresh" onclick="updateUI();renderizarGraficosDashboard()"><i class="fa-solid fa-rotate"></i>Atualizar</button><div class="relative text-xl px-2"><i class="fa-regular fa-bell"></i><span class="absolute -top-2 right-0 bg-red-500 text-white text-[9px] rounded-full w-4 h-4 flex items-center justify-center">3</span></div></div></div>
-              <div class="approved-kpis">
-                <div class="approved-card approved-kpi"><div class="approved-icon blue"><i class="fa-solid fa-dollar-sign"></i></div><div><div class="approved-kpi-label">FATURAMENTO</div><div id="dashTotalVendas" class="approved-kpi-value">R$ 0,00</div><div class="approved-trend">↑ 12,5% &nbsp; <span class="text-slate-400">vs. mês anterior</span></div></div></div>
-                <div class="approved-card approved-kpi"><div class="approved-icon green"><i class="fa-solid fa-wallet"></i></div><div><div class="approved-kpi-label">CONTAS A RECEBER</div><div id="dashReceitasRecebidas" class="approved-kpi-value">R$ 0,00</div><div class="approved-trend">↑ 8,7% &nbsp; <span class="text-slate-400">vs. mês anterior</span></div></div></div>
-                <div class="approved-card approved-kpi"><div class="approved-icon orange"><i class="fa-regular fa-credit-card"></i></div><div><div class="approved-kpi-label">CONTAS A PAGAR</div><div id="dashDespesasAVencer" class="approved-kpi-value">R$ 0,00</div><div class="approved-trend" style="color:#ef4355">↓ 5,3% &nbsp; <span class="text-slate-400">vs. mês anterior</span></div></div></div>
-                <div class="approved-card approved-kpi"><div class="approved-icon purple"><i class="fa-solid fa-chart-line"></i></div><div><div class="approved-kpi-label">SALDO PREVISTO</div><div id="dashSaldoRealBancos" class="approved-kpi-value">R$ 0,00</div><div class="approved-trend">↑ 15,2% &nbsp; <span class="text-slate-400">vs. mês anterior</span></div></div></div>
-              </div>
-              <div id="saldosBancosContainer" class="hidden"></div>
-              <div class="approved-grid-2"><div class="approved-card approved-panel"><div class="flex justify-between items-center"><h3>Evolução das vendas</h3><select class="text-xs px-3 py-2"><option>Últimos 30 dias</option></select></div><div class="approved-chart"><canvas id="graficoFaturamento"></canvas></div></div><div class="approved-card approved-panel"><h3>Situação financeira</h3><div class="approved-chart"><canvas id="graficoTopClientes"></canvas></div></div></div>
-              <div class="approved-bottom"><div class="approved-card approved-panel"><div class="flex justify-between"><h3>Próximos vencimentos</h3><button onclick="switchTab('financeiroTab')" class="text-blue-600 text-xs">Ver todos</button></div><div id="alertasContainer" class="text-xs"><p class="text-slate-500 py-3">Nenhum vencimento ou pendência para hoje.</p></div></div><div class="approved-card approved-panel"><div class="flex justify-between"><h3>Pedidos recentes</h3><button onclick="switchTab('vendasTab')" class="text-blue-600 text-xs">Ver todos</button></div><table class="approved-table"><thead><tr><th>Pedido</th><th>Cliente</th><th>Valor</th><th>Situação</th></tr></thead><tbody id="dashboardPedidosRecentes"><tr><td colspan="4" class="text-slate-500">Os pedidos recentes aparecerão aqui.</td></tr></tbody></table></div></div>
-            </section>
+                <div>
+                    <h2 class="text-base font-black text-white tracking-wide">Painel Principal</h2>
+                    <p class="text-[10px] text-slate-400">Visão financeira e fluxo de caixa em tempo real da TOTRE</p>
+                </div>
 
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                    <div class="bg-slate-900 border border-slate-800 p-3 rounded-xl shadow relative overflow-hidden">
+                        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-0.5">Receitas (Recebido em Caixa/Banco)</span>
+                        <span id="dashReceitasRecebidas" class="text-lg font-extrabold text-emerald-400">R$ 0,00</span>
+                    </div>
+
+                    <div class="bg-slate-900 border border-slate-800 p-3 rounded-xl shadow relative overflow-hidden">
+                        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-0.5">Despesas a Vencer / Pagar</span>
+                        <span id="dashDespesasAVencer" class="text-lg font-extrabold text-rose-400">R$ 0,00</span>
+                    </div>
+
+                    <div class="bg-slate-900 border border-slate-800 p-3 rounded-xl shadow relative overflow-hidden">
+                        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-0.5">Saldo Real dos Bancos/Caixa</span>
+                        <span id="dashSaldoRealBancos" class="text-lg font-extrabold text-sky-400">R$ 0,00</span>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900 border border-slate-800 rounded-xl p-3 space-y-2 shadow">
+                    <h3 class="text-[11px] font-bold text-sky-400 uppercase tracking-wider flex items-center gap-1.5">
+                        <i class="fa-solid fa-vault text-amber-400"></i> Saldo por Conta / Caixa (Detalhamento)
+                    </h3>
+                    <div id="saldosBancosContainer" class="grid grid-cols-2 md:grid-cols-4 gap-2.5 pt-0.5"></div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 items-start">
+                    <div class="lg:col-span-7 bg-slate-900 border border-slate-800 p-3.5 rounded-xl space-y-2 shadow">
+                        <div class="flex justify-between items-center border-b border-slate-800 pb-1.5">
+                            <h3 class="text-[11px] font-bold text-sky-400 uppercase flex items-center gap-1.5">
+                                <i class="fa-solid fa-chart-line text-emerald-400"></i> Evolução Faturamento Mensal
+                            </h3>
+                            <span class="text-[9px] text-slate-400 font-mono">Pedidos Faturados</span>
+                        </div>
+                        <div class="h-44 w-full relative">
+                            <canvas id="graficoFaturamento"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-5 bg-slate-900 border border-slate-800 p-3.5 rounded-xl space-y-2 shadow">
+                        <div class="flex justify-between items-center border-b border-slate-800 pb-1.5">
+                            <h3 class="text-[11px] font-bold text-amber-400 uppercase flex items-center gap-1.5">
+                                <i class="fa-solid fa-trophy text-amber-400"></i> Top 5 Clientes
+                            </h3>
+                            <span class="text-[9px] text-slate-400 font-mono">Rank R$</span>
+                        </div>
+                        <div class="h-44 w-full relative">
+                            <canvas id="graficoTopClientes"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900 border border-slate-800 rounded-xl p-3 space-y-2 shadow">
+                    <h3 class="text-[11px] font-bold text-amber-400 uppercase tracking-wider flex items-center gap-1.5">
+                        <i class="fa-solid fa-bell text-xs"></i> Lembretes e Vencimentos do Dia
+                    </h3>
+                    <div id="alertasContainer" class="space-y-1 text-[10px]">
+                        <p class="text-slate-500 italic">Nenhum vencimento ou pendência para hoje.</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <button onclick="switchTab('vendasTab')" class="bg-gradient-to-r from-sky-600 to-sky-500 hover:from-sky-500 hover:to-sky-400 text-white p-3.5 rounded-xl font-bold flex items-center justify-between shadow transition-all">
+                        <div class="flex items-center gap-2.5">
+                            <div class="bg-white/10 p-2 rounded-lg text-base"><i class="fa-solid fa-cart-plus"></i></div>
+                            <div class="text-left">
+                                <span class="text-xs block">Registrar Nova Venda</span>
+                                <span class="text-[9px] text-sky-100 font-normal">Criar pedido, faturar e gerar PDF</span>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-arrow-right text-sm"></i>
+                    </button>
+
+                    <button onclick="switchTab('financeiroTab')" class="bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-400 text-white p-3.5 rounded-xl font-bold flex items-center justify-between shadow transition-all">
+                        <div class="flex items-center gap-2.5">
+                            <div class="bg-white/10 p-2 rounded-lg text-base"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+                            <div class="text-left">
+                                <span class="text-xs block">Lançamento Financeiro</span>
+                                <span class="text-[9px] text-emerald-100 font-normal">Lançar manual ou Importar PDF/XML</span>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-arrow-right text-sm"></i>
+                    </button>
+                </div>
+            </section>
 
             <!-- CADASTROS TAB -->
             <section id="cadastrosTab" class="tab-content space-y-4">
@@ -1549,11 +1727,6 @@
             if (elRec) elRec.innerText = `R$ ${receitasLiquidadas.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
             if (elDes) elDes.innerText = `R$ ${despesasAVencer.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
             if (elSal) elSal.innerText = `R$ ${saldoRealBancos.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
-            const totalVendasDashboard = (db.vendas || []).reduce((s,v)=>s + Number(v.valor_total || v.total || 0), 0);
-            const elTotalVendas = document.getElementById('dashTotalVendas');
-            if (elTotalVendas) elTotalVendas.innerText = `R$ ${totalVendasDashboard.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
-            const dashPedidos = document.getElementById('dashboardPedidosRecentes');
-            if (dashPedidos) { const ultimos=(db.vendas||[]).slice().sort((a,b)=>String(b.data_emissao||b.data||'').localeCompare(String(a.data_emissao||a.data||''))).slice(0,5); dashPedidos.innerHTML=ultimos.length?ultimos.map(v=>{const p=(db.pessoas||[]).find(x=>x.id===v.cliente_id); const st=String(v.status||'PENDENTE').toUpperCase(); const cls=st.includes('FAT')||st.includes('PAGO')?'green':st.includes('CANCEL')?'red':st.includes('ORC')?'blue':'orange'; return `<tr><td>${v.numero_pedido||v.id||'-'}</td><td>${p?.nome_razasocial||v.cliente_nome||'-'}</td><td>R$ ${Number(v.valor_total||v.total||0).toLocaleString('pt-BR',{minimumFractionDigits:2})}</td><td><span class="approved-status ${cls}">${v.status||'Pendente'}</span></td></tr>`}).join(''):'<tr><td colspan="4" class="text-slate-500">Nenhum pedido encontrado.</td></tr>'; }
 
             // 3. Preenche os selects de Clientes e Condições de Pagamento nos modais de Vendas
             const selectCliente = document.getElementById('vendaCliente');
@@ -1668,8 +1841,8 @@
                 chartFaturamentoInstance = new Chart(ctxFat, {
                     type: 'line',
                     data: {
-                        labels: ['01/05','06/05','11/05','16/05','21/05','26/05','31/05'],
-                        datasets: [{ data: [22000,38000,35000,58000,37000,60000,65000], borderColor: '#0b67f5', backgroundColor:'rgba(11,103,245,.08)', fill:true, pointRadius:3, borderWidth:3, tension: 0.35 }]
+                        labels: ['Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul'],
+                        datasets: [{ data: [1000, 2000, 3500, 4000, 5200, 6100], borderColor: '#0284c7', tension: 0.3 }]
                     },
                     options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
                 });
@@ -1678,9 +1851,12 @@
             const ctxTop = document.getElementById('graficoTopClientes');
             if (ctxTop && !chartTopClientesInstance) {
                 chartTopClientesInstance = new Chart(ctxTop, {
-                    type: 'doughnut',
-                    data: { labels: ['A receber','Em dia','Em atraso','Vencidos'], datasets: [{ data: [50,30,14,6], backgroundColor: ['#2f7df4','#31b875','#ff8a1c','#ef4355'], borderWidth:2, borderColor:'#fff' }] },
-                    options: { responsive:true, maintainAspectRatio:false, cutout:'62%', plugins:{ legend:{ position:'right', labels:{ boxWidth:10, usePointStyle:true, padding:18 } } } }
+                    type: 'bar',
+                    data: {
+                        labels: ['Cliente A', 'Cliente B', 'Cliente C'],
+                        datasets: [{ data: [3000, 2500, 1800], backgroundColor: ['#38bdf8', '#10b981', '#f59e0b'] }]
+                    },
+                    options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
                 });
             }
         }
