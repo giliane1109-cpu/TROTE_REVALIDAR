@@ -1,22 +1,14 @@
-# TOTRE Melhorado para GitHub Pages
+# TOTRE — Login aprovado
 
-Versão baseada no `index.html` original, preservando as funções existentes.
+Versão do sistema estático para GitHub Pages com a tela de login aprovada.
 
-## Melhorias aplicadas
-- Tela de login no padrão visual aprovado.
-- Tema interno claro e moderno, sem remover as funções do sistema.
-- Botão Sair.
-- Responsividade e pacote pronto para GitHub Pages.
+## Correção aplicada
 
-## Acesso inicial
-- E-mail: `admin@totre.com.br`
-- Senha: `Totre@123`
-
-> Atenção: por ser GitHub Pages, este login é uma proteção visual local, não autenticação segura de servidor. Para autenticação real, deve-se integrar Supabase Auth depois.
+- Logo do login substituída pela arte aprovada, sem redesenho manual.
+- Arquivo da logo ampliado em alta resolução e mantido sem distorção.
+- Login, mostrar/ocultar senha, manter conectado e recuperação de senha preservados.
+- Demais módulos do `index.html` mantidos.
 
 ## Publicação
-Envie todos os arquivos desta pasta para a raiz do repositório e ative Settings > Pages > Deploy from a branch.
 
-
-## Revisão do login
-Tela de login restaurada conforme o modelo aprovado, sem alterar as demais telas ou funções do sistema.
+Envie todos os arquivos desta pasta para a raiz do repositório do GitHub Pages. Após publicar, abra em janela anônima ou use `Ctrl + Shift + R`.
